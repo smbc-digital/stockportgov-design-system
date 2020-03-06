@@ -7,10 +7,14 @@
     "node": "12.13.1"
   },
   "devDependencies": {
-    "del": "^5.1.0",
-    "govuk-frontend": "^3.5.0",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "autoprefixer": "^9.7.4",
     "cssnano": "^4.1.10",
+    "cz-conventional-changelog": "^3.1.0",
+    "cz-customizable": "^6.2.0",
+    "del": "^5.1.0",
+    "govuk-frontend": "^3.5.0",
     "gulp": "^4.0.2",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
@@ -18,6 +22,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sass-lint": "^1.4.0",
     "gulp-task-listing": "^1.1.0",
+    "husky": "^4.2.3",
     "jest": "^25.1.0",
     "merge-stream": "^2.0.0",
     "oldie": "^1.3.0",
@@ -27,6 +32,52 @@
   "scripts": {
     "build:dist": "node bin/check-nvmrc.js && gulp build:dist --destination dist && npm run test:build:dist",
     "test:build:dist": "jest tasks/gulp/tests/after-build-dist.test.js"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "type-enum": [
+        2,
+        "always",
+        [
+          "build",
+          "chore",
+          "docs",
+          "feat",
+          "fix",
+          "major",
+          "minor",
+          "patch",
+          "perf",
+          "refactor",
+          "revert",
+          "style",
+          "test",
+          "wip"
+        ]
+      ],
+      "scope-case": [
+        2,
+        "always",
+        [
+          "camel-case",
+          "kebab-case",
+          "lower-case"
+        ]
+      ]
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "author": "StockportGovUK",
   "license": "ISC"
