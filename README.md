@@ -1,4 +1,4 @@
-<h1 align="center">Stockportgov Design System</h1><div align="center">
+<h1 align="center">Stockportgov Design System</h1>
 
 <div align="center">
   :sunglasses: :alien: :sparkles:
@@ -15,7 +15,6 @@
 ## Table of Contents
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Linting](#linting)
 - [Development](#development)
 - [Contributing](#contributing)
 
@@ -27,11 +26,11 @@
 
 `$ npm run setup`
 
-## Installation
-
 #### Linting
 
 This project makes use of [gulp-sass-lint](https://www.npmjs.com/package/gulp-sass-lint) and [commitlint](https://www.npmjs.com/package/commitlint). To make use of these packages you will need to install these npm packages and then install the relevant IDE addons.
+
+## Installation
 
 ## Development
 
