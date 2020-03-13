@@ -1,0 +1,24 @@
+@import "../settings/colours-palette";
+
+////
+/// @group helpers/colour
+////
+
+/// Get colour
+///
+/// @param {String} $colour - Name of colour from the colour palette
+///   (`$govuk-colours`)
+/// @return {Colour} Representation of named colour
+///
+/// @throw if `$colour` is not a colour from the colour palette
+/// @access public
+
+@function smbc-colour($colour) {
+    $colour: quote($colour);
+
+    @if not map-has-key($smbc-colours, $colour) {
+        @error "Unknown colour `#{$colour}`";
+    }
+
+    @return map-get($smbc-colours, $colour);
+}
