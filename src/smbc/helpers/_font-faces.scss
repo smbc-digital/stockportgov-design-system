@@ -1,0 +1,43 @@
+////
+/// @group helpers
+////
+
+// Disables linting for this file only
+// sass-lint:disable no-css-comments, no-duplicate-properties, property-sort-order, indentation
+
+@import '../../../node_modules/govuk-frontend/govuk/tools/exports';
+
+/// Font Face - Public Sans
+///
+/// Outputs the font-face declaration for Public Sans at the root of the CSS document
+/// the first time it is called.
+///
+/// @access private
+
+@mixin _govuk-font-face-public-sans {
+  @include govuk-not-ie8 { // In IE8, which cannot render WOFF format, we fall back to system fonts
+    @include govuk-exports('smbc/helpers/font-faces') {
+      @at-root {
+        /*! Copyright (c) 2011 by Margaret Calvert & Henrik Kubel. All rights reserved. The font has been customised for exclusive use on gov.uk. This cut is not commercially available. */
+
+        @font-face {
+          font-family: 'Public Sans';
+          src: govuk-font-url("PublicSans-ExtraBold.woff2") format("woff2"),
+               govuk-font-url("PublicSans-ExtraBold.woff") format("woff");
+          font-weight: bold;
+          font-style: normal;
+          font-display: fallback;
+        }
+
+        @font-face {
+          font-family: "Public Sans";
+          src: govuk-font-url("PublicSans-Regular.woff2") format("woff2"),
+               govuk-font-url("PublicSans-Regular.woff") format("woff");
+          font-weight: normal;
+          font-style: normal;
+          font-display: fallback;
+        }
+      }
+    }
+  }
+}
