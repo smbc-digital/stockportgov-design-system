@@ -1,8 +1,9 @@
 /** StockportGovUk Style Overrides **/
-
 @import './settings/all';
-@import './components/all';
 
 /** GovUk Style Import **/
-
 @import '../../node_modules/govuk-frontend/govuk/all';
+
+/** StockportGovUk Style Specific Overrides **/
+@import './components/all';
+@import './core/all';
