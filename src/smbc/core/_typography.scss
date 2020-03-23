@@ -1,7 +1,9 @@
 @import '../../../node_modules/govuk-frontend/govuk/settings/all';
 @import '../../../node_modules/govuk-frontend/govuk/helpers/all';
 
-.govuk-body {
+.smbc-body {
+    @extend .govuk-body;
+    
     @include govuk-media-query($from: desktop) {
         line-height: 1.5;
     }
