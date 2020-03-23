@@ -2,5 +2,9 @@
 /// @group settings/typography
 ////
 
+$govuk-fonts-path: './assets/fonts/';
 $govuk-font-family: 'Public Sans', Helvetica, Arial, sans-serif;
+$govuk-font-weight-bold: 800;
 
+@import './helpers/font-faces';
+@include _govuk-font-face-public-sans;
