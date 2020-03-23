@@ -1,12 +1,9 @@
-@import "../helpers/colour";
-
 ////
 /// @group settings/colours
 ////
 
-/// Brand colour
-///
-/// @type Colour
-/// @access public
+@import '../helpers/colour';
 
-$smbc-brand-colour: smbc-colour("teal") !default;
+$govuk-brand-colour: govuk-colour("smbc-green");
+$govuk-link-colour: govuk-colour("smbc-green");
+$govuk-link-hover-colour: govuk-colour("smbc-black");
