@@ -14,7 +14,7 @@
 ///
 /// @access private
 
-@mixin _govuk-font-face-public-sans {
+@mixin _smbc-font-face-public-sans {
   @include govuk-not-ie8 { // In IE8, which cannot render WOFF format, we fall back to system fonts
     @include govuk-exports('smbc/helpers/font-faces') {
       @at-root {
