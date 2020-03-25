@@ -2,13 +2,12 @@
 @import '../../../node_modules/govuk-frontend/govuk/helpers/all';
 
 .smbc-body {
-    @extend .govuk-body;
-    
-    @include govuk-media-query($from: desktop) {
-        line-height: 1.5;
-    }
+  @extend .govuk-body;
+  @include govuk-media-query($from: desktop) {
+    line-height: 1.5;
+  }
 
-    @include govuk-media-query($from: mobile) {
-        line-height: 1.5;
-    }
+  @include govuk-media-query($from: mobile) {
+    line-height: 1.5;
+  }
 }

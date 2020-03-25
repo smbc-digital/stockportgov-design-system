@@ -14,15 +14,15 @@
 /// @access public
 
 @function govuk-colour($colour) {
-    $colour: quote($colour);
+  $colour: quote($colour);
 
-    @if map-has-key($smbc-colours, $colour){
-        @return map-get($smbc-colours, $colour);
-    }
+  @if map-has-key($smbc-colours, $colour) {
+    @return map-get($smbc-colours, $colour);
+  }
 
-    @if not map-has-key($govuk-colours, $colour) {
-        @error "Unknown colour `#{$colour}`";
-    }
+  @if not map-has-key($govuk-colours, $colour) {
+    @error 'Unknown colour `#{$colour}`';
+  }
 
-    @return map-get($govuk-colours, $colour);
+  @return map-get($govuk-colours, $colour);
 }

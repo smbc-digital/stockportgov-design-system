@@ -20,17 +20,17 @@
       @at-root {
         @font-face {
           font-family: 'Public Sans';
-          src: govuk-font-url("PublicSans-ExtraBold.woff2") format("woff2"),
-               govuk-font-url("PublicSans-ExtraBold.woff") format("woff");
+          src: govuk-font-url('PublicSans-ExtraBold.woff2') format('woff2'),
+               govuk-font-url('PublicSans-ExtraBold.woff') format('woff');
           font-weight: 800;
           font-style: normal;
           font-display: fallback;
         }
 
         @font-face {
-          font-family: "Public Sans";
-          src: govuk-font-url("PublicSans-Regular.woff2") format("woff2"),
-               govuk-font-url("PublicSans-Regular.woff") format("woff");
+          font-family: 'Public Sans';
+          src: govuk-font-url('PublicSans-Regular.woff2') format('woff2'),
+               govuk-font-url('PublicSans-Regular.woff') format('woff');
           font-weight: normal;
           font-style: normal;
           font-display: fallback;
