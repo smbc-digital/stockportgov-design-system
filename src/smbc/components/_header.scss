@@ -1,0 +1,12 @@
+@import "../helpers/all";
+@import "../settings/all";
+
+.smbc-header {
+  @extend .govuk-header;
+  background: $govuk-brand-colour;
+}
+
+.smbc-header__container {
+  @extend .govuk-header__container;
+  border-bottom: 10px solid govuk-colour("teal");
+}
