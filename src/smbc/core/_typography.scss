@@ -2,7 +2,7 @@
 @import '../../../node_modules/govuk-frontend/govuk/helpers/all';
 
 .smbc-body {
-  @extend .govuk-body;
+  @extend .govuk-body; // sass-lint:disable-line placeholder-in-extend
   @include govuk-media-query($from: desktop) {
     line-height: 1.5;
   }
