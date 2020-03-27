@@ -1,0 +1,41 @@
+@import '../helpers/all';
+@import '../settings/all';
+
+.smbc-header {
+  @extend .govuk-header; // sass-lint:disable-line placeholder-in-extend
+  background: $govuk-brand-colour;
+}
+
+.smbc-header__container { // sass-lint:disable-line class-name-format
+  @extend .govuk-header__container; // sass-lint:disable-line placeholder-in-extend
+  border-bottom: 10px solid govuk-colour('smbc-teal');
+}
+
+.smbc-header__logo { // sass-lint:disable-line class-name-format
+  @include govuk-media-query($from: mobile) {
+    background-image: url('assets/images/smbc_header_mobile_logo_180x37.png');
+    background-size: 180px 37px;
+    min-width: 180px;
+    padding-top: 37px;
+    &:focus {
+      background-image: url('assets/images/smbc_focus_mobile_logo_180x37.png');
+    };
+}
+  
+  @include govuk-media-query($from: desktop) {
+    background-image: url('assets/images/smbc_header_desktop_logo_200x41.png');
+    background-size: 200px 41px;
+    min-width: 200px;
+    padding-top: 41px;
+    &:focus {
+      background-image: url('assets/images/smbc_focus_desktop_logo_200x41.png');
+    };
+ }
+
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  display: inline-block;
+  text-align: left;
+  text-decoration: none;
+  white-space: nowrap;
+}
