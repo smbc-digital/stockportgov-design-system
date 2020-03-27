@@ -12,7 +12,7 @@
   </sub>
 </div>
 
-Stockportgov design system is the code needed to design a user interface for Stockport Council platforms and services, having as a base the [govuk-frontend] (https://github.com/alphagov/govuk-frontend) components. We will amend these components to match the design patterns and styles we have within Stockport Metropolitan Borough Council.
+Stockportgov design system is the code needed to design a user interface for Stockport Council platforms and services, having as a base the [govuk-frontend](https://github.com/alphagov/govuk-frontend) components. We will amend these components to match the design patterns and styles we have within Stockport Metropolitan Borough Council.
 
 
 ## Table of Contents

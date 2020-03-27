@@ -1,17 +1,16 @@
 @import '../settings/all';
 @import '../helpers/all';
 
-
 .smbc-panel {
-  @extend .govuk-panel;
+  @extend .govuk-panel; // sass-lint:disable-line placeholder-in-extend
 
   border: 0;
-  border-left: 10px solid govuk-colour('smbc-green');
+  border-left: 10px solid $govuk-brand-colour;
   text-align: left;
 }
 
 .smbc-panel--confirmation {
-  @extend .govuk-panel--confirmation;
+  @extend .govuk-panel--confirmation; // sass-lint:disable-line placeholder-in-extend
 
   background-color: govuk-colour('smbc-green-light');
   color: govuk-colour('smbc-black');
