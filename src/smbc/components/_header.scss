@@ -1,6 +1,5 @@
 @import "../helpers/all";
 @import "../settings/all";
-// @import '../../../node_modules/govuk-frontend/govuk/helpers/all';
 
 .smbc-header {
   @extend .govuk-header;
@@ -23,14 +22,20 @@
   @include govuk-media-query($from: mobile) {
     min-width: 180px;
     padding-top: 37px;
-    background-image: url("/D:/code/stockportgov-design-system/src/smbc/assets/images/smbc_header_mobile_logo_180x37.png");
+    background-image: url("assets/images/smbc_header_mobile_logo_180x37.png");
     background-size: 180px 37px;
+    &:focus {
+      background-image: url("assets/images/smbc_focus_mobile_logo_180x37.png");
+    };
   }
   
   @include govuk-media-query($from: desktop) {
     min-width: 200px;
     padding-top: 41px;
-    background-image: url("/D:/code/stockportgov-design-system/src/smbc/assets/images/smbc_header_desktop_logo_200x41.png");
+    background-image: url("assets/images/smbc_header_desktop_logo_200x41.png");
     background-size: 200px 41px;
+    &:focus {
+      background-image: url("assets/images/smbc_focus_desktop_logo_200x41.png");
+    };
  }
 }
