@@ -5,7 +5,7 @@
   @extend .govuk-panel; // sass-lint:disable-line placeholder-in-extend
 
   border: 0;
-  border-left: 10px solid $govuk-brand-colour;
+  border-left: 10px solid govuk-colour('smbc-green');
   text-align: left;
 }
 
