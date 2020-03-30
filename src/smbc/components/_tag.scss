@@ -1,7 +1,8 @@
-@import '../settings/all';
-@import '../helpers/all';
+@import "../settings/all";
+@import "../helpers/all";
 
 .smbc-tag {
-  @extend .govuk-tag; // sass-lint:disable-line placeholder-in-extend
-  background-color: govuk-colour('smbc-green');
+  @extend .govuk-tag;
+
+  background-color: govuk-colour("smbc-green");
 }

@@ -1,4 +1,5 @@
 {
   "dist": "dist/",
-  "src": "src/smbc/"
+  "src": "src/smbc/",
+  "config": "config/"
 }

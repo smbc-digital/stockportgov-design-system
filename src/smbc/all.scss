@@ -1,11 +1,11 @@
 $govuk-is-ie8: false !default;
 
 // StockportGovUk Style Overrides
-@import './settings/all';
+@import "./settings/all";
 
 // GovUk Style Import
-@import '../../node_modules/govuk-frontend/govuk/all';
+@import "../../node_modules/govuk-frontend/govuk/all";
 
 // StockportGovUk Style Specific Overrides
-@import './components/all';
-@import './core/all';
+@import "./components/all";
+@import "./core/all";

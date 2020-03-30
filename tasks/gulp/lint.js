@@ -10,7 +10,9 @@ gulp.task('scss:lint', () => {
   return gulp.src([
     configPaths.src + '**/*.scss'
   ])
-    .pipe(sasslint())
+    .pipe(sasslint({
+      configFile: configPaths.config + '.sass-lint.yml'
+    }))
     .pipe(sasslint.format())
     .pipe(sasslint.failOnError())
 })
