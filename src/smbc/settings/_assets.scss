@@ -2,9 +2,13 @@
 /// @group settings/assets
 ////
 
-$govuk-images-path: './assets/images/';
+$govuk-assets-path: "./assets/";
 
-$logo-footer-180x37: 'smbc_footer_mobile_logo_180x37.png';
-$logo-footer-200x41: 'smbc_footer_desktop_logo_200x41.png';
-$logo-header-180x37: 'smbc_header_mobile_logo_180x37.png';
-$logo-header-200x41: 'smbc_header_desktop_logo_200x41.png';
+$govuk-images-path: "#{$govuk-assets-path}images/" !default;
+
+$govuk-fonts-path: "#{$govuk-assets-path}fonts/" !default;
+
+$logo-footer-180x37: "smbc_footer_mobile_logo_180x37.png";
+$logo-footer-200x41: "smbc_footer_desktop_logo_200x41.png";
+$logo-header-180x37: "smbc_header_mobile_logo_180x37.png";
+$logo-header-200x41: "smbc_header_desktop_logo_200x41.png";

@@ -1,8 +1,8 @@
-@import '../settings/colours-palette';
-
 ////
 /// @group helpers/colour
 ////
+
+@import "../settings/colours-palette";
 
 /// Get colour
 ///
@@ -21,7 +21,7 @@
   }
 
   @if not map-has-key($govuk-colours, $colour) {
-    @error 'Unknown colour `#{$colour}`';
+    @error "Unknown colour `#{$colour}`";
   }
 
   @return map-get($govuk-colours, $colour);
