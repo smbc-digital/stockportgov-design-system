@@ -3,6 +3,5 @@
 
 .smbc-tag {
   @extend .govuk-tag; // sass-lint:disable-line placeholder-in-extend
-
   background-color: govuk-colour('smbc-green');
 }

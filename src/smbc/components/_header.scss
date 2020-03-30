@@ -13,27 +13,25 @@
 
 .smbc-header__logo { // sass-lint:disable-line class-name-format
   @include govuk-media-query($from: mobile) {
-    background-image: govuk-image-url('smbc_header_mobile_logo_180x37.png');
+    background-image: govuk-image-url($logo-header-180x37);
     background-size: 180px 37px;
     min-width: 180px;
     padding-top: 37px;
 
     &:focus {
-      background-image: govuk-image-url('smbc_focus_mobile_logo_180x37.png');
-    };
+      background-image: govuk-image-url($logo-header-180x37);
+    }
   }
-
   @include govuk-media-query($from: desktop) {
-    background-image: govuk-image-url('smbc_header_desktop_logo_200x41.png');
+    background-image: govuk-image-url($logo-header-200x41);
     background-size: 200px 41px;
     min-width: 200px;
     padding-top: 41px;
 
     &:focus {
-      background-image: govuk-image-url('smbc_focus_desktop_logo_200x41.png');
-    };
+      background-image: govuk-image-url($logo-header-200x41);
+    }
   }
-
   background-position: 50% 0;
   background-repeat: no-repeat;
   display: inline-block;
