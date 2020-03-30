@@ -10,14 +10,14 @@
 .smbc-footer__logo { // sass-lint:disable-line class-name-format
   @extend .govuk-footer__copyright-logo; // sass-lint:disable-line placeholder-in-extend
   @include govuk-media-query($from: mobile) {
-    background-image: url('assets/images/smbc_footer_mobile_logo_180x37.png');
+    background-image: govuk-image-url($logo-footer-180x37);
     background-size: 180px 37px;
     min-width: 180px;
     padding-top: 37px;
     text-align: left;
   }
   @include govuk-media-query($from: desktop) {
-    background-image: url('assets/images/smbc_footer_desktop_logo_200x41.png');
+    background-image: govuk-image-url($logo-footer-200x41);
     background-size: 200px 41px;
     min-width: 200px;
     padding-top: 41px;
