@@ -7,5 +7,5 @@ $govuk-is-ie8: false !default;
 @import "../../node_modules/govuk-frontend/govuk/all";
 
 // StockportGovUk Style Specific Overrides
-@import "./components/all";
 @import "./core/all";
+@import "./components/all";
