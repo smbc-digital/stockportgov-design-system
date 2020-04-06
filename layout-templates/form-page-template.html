@@ -1,140 +1,107 @@
 <!doctype html>
 <html lang="en" class="govuk-template flexbox no-flexboxtweener">
-
-<head>
+  <head>
+    <meta charset="utf-8">
+    <title>Form page template</title>
+    <meta name="description" content="An example of what a form page would look like whhile using the StockportGovUK design system.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://stockportgov-design-system.s3-eu-west-1.amazonaws.com/int/1.0.0/smbc-frontend.min.css"
-        rel="stylesheet" />
-    <script src="/javascripts/vendor/modernizr.js"></script>
-</head>
+    <link rel="apple-touch-icon" href="assets/images/smbc-apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/smbc-apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="assets/images/smbc-apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/smbc-apple-touch-icon-180x180.png">
+    <link href="https://stockportgov-design-system.s3-eu-west-1.amazonaws.com/int/1.0.0/smbc-frontend.min.css" rel="stylesheet" />
+    <meta name="theme-color" content="#006666">
+  </head>
 
-<body class="govuk-template__body  js-enabled">
+  <body class="govuk-template__body">
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
     <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
 
     <header class="smbc-header " role="banner" data-module="govuk-header">
-        <div class="smbc-header__container govuk-width-container">
-            <div class="govuk-header__logo">
-                <a href="https://www.stockport.gov.uk/" class="govuk-header__link smbc-header__logo"></a>
-            </div>
-            <div class="govuk-header__content">
-                <a href="#" class="govuk-header__link govuk-header__link--service-name">
-                    Service name (forms over 5 pages long)
-                </a>
-            </div>
+      <div class="smbc-header__container govuk-width-container">
+        <div class="govuk-header__logo">
+          <a href="/" class="govuk-header__link smbc-header__link--homepage">STOCKPORT.GOV.UK</a>
         </div>
+        <div class="govuk-header__content">
+          <a href="#" class="govuk-header__link govuk-header__link--service-name govuk-!-font-size-19">Get help applying for debt advice specialist</a>
+        </div>
+      </div>
     </header>
 
     <div class="govuk-width-container">
-        <div class="govuk-phase-banner">
-            <p class="govuk-phase-banner__content">
-                <strong class="smbc-tag govuk-phase-banner__content__tag">
-                    alpha
-                </strong>
-                <span class="govuk-phase-banner__text">
-                    This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-                </span>
-            </p>
+      <div class="govuk-phase-banner">
+        <p class="govuk-phase-banner__content">
+          <strong class="smbc-tag govuk-phase-banner__content__tag">alpha</strong>
+          <span class="govuk-phase-banner__text">This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.</span>
+        </p>
+      </div>
+
+      <a href="#" class="govuk-back-link">Back</a>
+
+      <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <form action="/form-handler" method="post" novalidate="">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                      <h1 class="govuk-fieldset__heading">Where do you live?</h1>
+                  </legend>
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+                      <label class="govuk-label govuk-radios__label" for="where-do-you-live">England</label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+                      <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">Scotland</label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
+                      <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">Wales</label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live" type="radio" value="northern-ireland">
+                      <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">Northern Ireland</label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
+            </form>
+          </div>
         </div>
-
-        <a href="#" class="govuk-back-link">Back</a>
-
-        <main class="govuk-main-wrapper " id="main-content" role="main">
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-two-thirds">
-                    <form action="/form-handler" method="post" novalidate="">
-                        <div class="govuk-form-group">
-                            <fieldset class="govuk-fieldset">
-                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                                    <h1 class="govuk-fieldset__heading">
-                                        Where do you live?
-                                    </h1>
-                                </legend>
-                                <div class="govuk-radios">
-                                    <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="where-do-you-live"
-                                            name="where-do-you-live" type="radio" value="england">
-                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-                                            England
-                                        </label>
-                                    </div>
-                                    <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="where-do-you-live-2"
-                                            name="where-do-you-live" type="radio" value="scotland">
-                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                                            Scotland
-                                        </label>
-                                    </div>
-                                    <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="where-do-you-live-3"
-                                            name="where-do-you-live" type="radio" value="wales">
-                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
-                                            Wales
-                                        </label>
-                                    </div>
-                                    <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="where-do-you-live-4"
-                                            name="where-do-you-live" type="radio" value="northern-ireland">
-                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
-                                            Northern Ireland
-                                        </label>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </div>
-                        <button class="govuk-button" data-module="govuk-button">
-                            Continue
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </main>
+      </main>
     </div>
 
-    <footer class="smbc-footer " role="contentinfo">
+    <footer class="smbc-footer" role="contentinfo">
       <div class="govuk-width-container ">
         <div class="govuk-footer__navigation">
           <div class="govuk-footer__section">
             <ul class="govuk-grid-column-two-thirds govuk-footer__list govuk-footer__list--columns-2">
               <li class="govuk-footer__list-item">
-                <a class="govuk-footer__link" href="#1">
-                  About our website
-                </a>
+                <a class="govuk-footer__link" href="#1">About our website</a>
               </li>
               <li class="govuk-footer__list-item">
-                <a class="govuk-footer__link" href="#2">
-                  Contact us
-                </a>
+                <a class="govuk-footer__link" href="#2">Contact us</a>
               </li>
               <li class="govuk-footer__list-item">
-                <a class="govuk-footer__link" href="#3">
-                  Data protection
-                </a>
+                <a class="govuk-footer__link" href="#3">Data protection</a>
               </li>
               <li class="govuk-footer__list-item">
-                <a class="govuk-footer__link" href="#4">
-                  Freedom of information
-                </a>
+                <a class="govuk-footer__link" href="#4">Freedom of information</a>
               </li>
               <li class="govuk-footer__list-item">
-                <a class="govuk-footer__link" href="#5">
-                  Accessibility statement
-                </a>
+                <a class="govuk-footer__link" href="#5">Accessibility statement</a>
               </li>
               <li class="govuk-footer__list-item">
-                <a class="govuk-footer__link" href="#6">
-                  How to find us
-                </a>
+                <a class="govuk-footer__link" href="#6">How to find us</a>
               </li>
               <li class="govuk-footer__list-item">
-                <a class="govuk-footer__link" href="#7">
-                  Terms and conditions
-                </a>
+                <a class="govuk-footer__link" href="#7">Terms and conditions</a>
               </li>
               <li class="govuk-footer__list-item">
-                <a class="govuk-footer__link" href="#8">
-                  Website feedback
-                </a>
+                <a class="govuk-footer__link" href="#8">Website feedback</a>
               </li>
             </ul>
           </div>
@@ -142,23 +109,11 @@
         <hr class="govuk-footer__section-break">
         <div class="govuk-footer__meta">
           <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
-            <div class="govuk-footer__meta-custom">
-              &copy; 2020 Stockport Metropolitan Borough Council
-            </div>
-            <span class="govuk-footer__licence-description">
-              Built by the <a href="http://www.digitalstockport.info" class="govuk-footer__link">Digital Team</a> of Stockport
-            </span>
-          </div>
-          <div class="smbc-footer__meta-item-logo">
-            <a href="http://www.stockport.gov.uk" class="govuk-footer__link smbc-footer__logo"></a>
+            <div class="govuk-footer__meta-custom">&copy; 2020 Stockport Metropolitan Borough Council</div>
+            <span class="govuk-footer__licence-description">Built by the <a href="http://www.digitalstockport.info" class="govuk-footer__link">Digital Team</a> of Stockport</span>
           </div>
         </div>
       </div>
     </footer>
-
-    <script src="/javascripts/vendor/iframeResizer.contentWindow.js"></script>
-    <script src="/javascripts/govuk-frontend-d78f5b9df409c37471b91ddb1952fee4.js"></script>
-    <script src="/javascripts/example-149b2c1c72d42e5afd271c8a89fed638.js"></script>
-</body>
-
+  </body>
 </html>
