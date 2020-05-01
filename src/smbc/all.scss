@@ -1,9 +1,11 @@
-$govuk-font-family: 'Public Sans', Helvetica, Arial, sans-serif;
+$govuk-is-ie8: false !default;
 
-@import '../../node_modules/govuk-frontend/govuk/all';
+// StockportGovUk Style Overrides
+@import "./settings/all";
 
-/** StockportGovUk Style Overrides **/
+// GovUk Style Import
+@import "../../node_modules/govuk-frontend/govuk/all";
 
-@import './typography/all';
-@import './colours/all';
-@import './components/all';
+// StockportGovUk Style Specific Overrides
+@import "./core/all";
+@import "./components/all";

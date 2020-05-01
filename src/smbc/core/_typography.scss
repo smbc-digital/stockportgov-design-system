@@ -1,0 +1,10 @@
+.smbc-body {
+  @extend .govuk-body;
+  @include govuk-media-query($from: desktop) {
+    line-height: 1.5;
+  }
+
+  @include govuk-media-query($from: mobile) {
+    line-height: 1.5;
+  }
+}

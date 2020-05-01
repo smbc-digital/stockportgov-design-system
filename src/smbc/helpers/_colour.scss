@@ -1,8 +1,8 @@
-@import "../settings/colours-palette";
-
 ////
 /// @group helpers/colour
 ////
+
+@import "../settings/colours-palette";
 
 /// Get colour
 ///
@@ -13,12 +13,16 @@
 /// @throw if `$colour` is not a colour from the colour palette
 /// @access public
 
-@function smbc-colour($colour) {
-    $colour: quote($colour);
+@function govuk-colour($colour) {
+  $colour: quote($colour);
 
-    @if not map-has-key($smbc-colours, $colour) {
-        @error "Unknown colour `#{$colour}`";
-    }
-
+  @if map-has-key($smbc-colours, $colour) {
     @return map-get($smbc-colours, $colour);
+  }
+
+  @if not map-has-key($govuk-colours, $colour) {
+    @error "Unknown colour `#{$colour}`";
+  }
+
+  @return map-get($govuk-colours, $colour);
 }

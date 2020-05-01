@@ -1,0 +1,47 @@
+@import "../helpers/all";
+@import "../settings/all";
+
+.smbc-header {
+  @extend .govuk-header;
+  background: $govuk-brand-colour;
+
+  .smbc-header__container {
+    @extend .govuk-header__container;
+    border-bottom: 10px solid govuk-colour("smbc-teal");
+  }
+
+  .smbc-header__link--homepage {
+    @extend .govuk-header__link--homepage;
+    font-size: 24px;
+  }
+}
+
+.smbc-header__logo {
+  @include govuk-media-query($from: mobile) {
+    min-width: 180px;
+    padding-top: 37px;
+    background-image: govuk-image-url($logo-header-180x37);
+    background-size: 180px 37px;
+
+    &:focus {
+      background-image: govuk-image-url($logo-header-180x37);
+    };
+  }
+  @include govuk-media-query($from: desktop) {
+    min-width: 200px;
+    padding-top: 41px;
+    background-image: govuk-image-url($logo-header-200x41);
+    background-size: 200px 41px;
+
+    &:focus {
+      background-image: govuk-image-url($logo-header-200x41);
+    };
+  }
+
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  text-align: left;
+  text-decoration: none;
+  white-space: nowrap;
+}
