@@ -1,0 +1,85 @@
+.leaflet-popup > .leaflet-popup-content-wrapper {
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: govuk-colour('white');
+    width: 100%;
+
+    .leaflet-popup-content {
+        &:not(:last-of-type) {
+            border-bottom: 2px solid govuk-colour('light-grey');
+        }
+        .item {
+            padding-left: 24px;
+            > p.title {
+                display: inline-block;
+                margin-bottom: 0;
+                margin-top: 0;
+                color: govuk-colour('light-grey');
+                font-size: 16px;
+                font-weight: 400;
+            }
+        }
+
+        .info {
+            margin-top: 0;
+        }
+
+        .fa {
+            color: govuk-colour('light-grey');
+            position: absolute;
+            left: 14px;
+            line-height: 1.316;
+            padding-left: 6px;
+        }
+
+        a {
+            color: govuk-colour('white');
+        }
+
+        .button-primary {
+            font: 1em/2 $govuk-font-family;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        div[class^="message-"] {
+            padding: 20px;
+            width: 100%;
+            border-radius: 3px;
+            min-width: 0;
+            line-height: 20px;
+            text-align: center;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .message-fault {
+            background-color: $govuk-error-colour;
+            color: govuk-colour('white');
+        }
+
+        .message-maintenance {
+            background-color: govuk-colour('orange');
+            color: govuk-colour('smbc-black');
+        }
+
+        .last-updated {
+            text-align: center;
+            color: govuk-colour('light-grey');
+            font-size: 16px;
+        }
+    }
+}
+
+.leaflet-container .leaflet-popup > a.leaflet-popup-close-button {
+    display: inline-block;
+    font: normal normal 600 24px/1 FontAwesome;
+    text-rendering: auto;
+    padding-right: 6px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.leaflet-popup-tip-container > .leaflet-popup-tip {
+    background-color: rgba(0, 0, 0, 0.9);
+}
