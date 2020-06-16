@@ -15,3 +15,9 @@
   color: govuk-colour("smbc-black");
   background-color: govuk-colour("smbc-green-light");
 }
+
+.smbc-panel__body {
+  @extend .govuk-body;
+
+  margin-bottom: 0;
+}
