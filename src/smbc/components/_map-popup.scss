@@ -1,85 +1,90 @@
+@import "../helpers/all";
+@import "../settings/all";
+
 .leaflet-popup > .leaflet-popup-content-wrapper {
-    border-radius: 3px;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: govuk-colour('white');
-    width: 100%;
+  width: 100%;
+  border-radius: 3px;
+  color: govuk-colour("white");
+  background-color: rgba(0, 0, 0, 0.9); // sass-lint:disable-line no-color-literals leading-zero
 
-    .leaflet-popup-content {
-        &:not(:last-of-type) {
-            border-bottom: 2px solid govuk-colour('light-grey');
-        }
-        .item {
-            padding-left: 24px;
-            > p.title {
-                display: inline-block;
-                margin-bottom: 0;
-                margin-top: 0;
-                color: govuk-colour('light-grey');
-                font-size: 16px;
-                font-weight: 400;
-            }
-        }
-
-        .info {
-            margin-top: 0;
-        }
-
-        .fa {
-            color: govuk-colour('light-grey');
-            position: absolute;
-            left: 14px;
-            line-height: 1.316;
-            padding-left: 6px;
-        }
-
-        a {
-            color: govuk-colour('white');
-        }
-
-        .button-primary {
-            font: 1em/2 $govuk-font-family;
-            width: 100%;
-            box-sizing: border-box;
-            margin-bottom: 10px;
-        }
-
-        div[class^="message-"] {
-            padding: 20px;
-            width: 100%;
-            border-radius: 3px;
-            min-width: 0;
-            line-height: 20px;
-            text-align: center;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-        }
-
-        .message-fault {
-            background-color: $govuk-error-colour;
-            color: govuk-colour('white');
-        }
-
-        .message-maintenance {
-            background-color: govuk-colour('orange');
-            color: govuk-colour('smbc-black');
-        }
-
-        .last-updated {
-            text-align: center;
-            color: govuk-colour('light-grey');
-            font-size: 16px;
-        }
+  .leaflet-popup-content {
+    &:not(:last-of-type) {
+      border-bottom: 2px solid govuk-colour("light-grey");
     }
+
+    .item {
+      padding-left: 24px;
+
+      > p.title { // sass-lint:disable-line no-qualifying-elements
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
+        color: govuk-colour("light-grey");
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+
+    .info {
+      margin-top: 0;
+    }
+
+    .fa {
+      position: absolute;
+      left: 14px;
+      padding-left: 6px;
+      color: govuk-colour("light-grey");
+      line-height: 1.316;
+    }
+
+    a {
+      color: govuk-colour("white");
+    }
+
+    .button-primary {
+      box-sizing: border-box;
+      width: 100%;
+      margin-bottom: 10px;
+      font: 1em/2 $govuk-font-family;
+    }
+
+    div[class^="message-"] {
+      box-sizing: border-box;
+      width: 100%;
+      min-width: 0;
+      margin-bottom: 10px;
+      padding: 20px;
+      border-radius: 3px;
+      line-height: 20px;
+      text-align: center;
+    }
+
+    .message-fault {
+      color: govuk-colour("white");
+      background-color: $govuk-error-colour;
+    }
+
+    .message-maintenance {
+      color: govuk-colour("smbc-black");
+      background-color: govuk-colour("orange");
+    }
+
+    .last-updated {
+      color: govuk-colour("light-grey");
+      font-size: 16px;
+      text-align: center;
+    }
+  }
 }
 
-.leaflet-container .leaflet-popup > a.leaflet-popup-close-button {
-    display: inline-block;
-    font: normal normal 600 24px/1 FontAwesome;
-    text-rendering: auto;
-    padding-right: 6px;
-    -webkit-font-smoothing: antialiased;
+.leaflet-container .leaflet-popup > a.leaflet-popup-close-button { // sass-lint:disable-line no-qualifying-elements
+  display: inline-block;
+  padding-right: 6px;
+  font: normal normal 600 24px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
 }
 
-.leaflet-popup-tip-container > .leaflet-popup-tip {
-    background-color: rgba(0, 0, 0, 0.9);
+.leaflet-popup-tip-container > .leaflet-popup-tip { // sass-lint:disable-line no-qualifying-elements
+  background-color: rgba(0, 0, 0, 0.9); // sass-lint:disable-line no-color-literals leading-zero
 }
