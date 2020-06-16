@@ -1,17 +1,17 @@
-@import '../settings/all';
-@import '../helpers/all';
+@import "../settings/all";
+@import "../helpers/all";
 
 .smbc-panel {
-  @extend .govuk-panel; // sass-lint:disable-line placeholder-in-extend
+  @extend .govuk-panel;
 
   border: 0;
-  border-left: 10px solid $govuk-brand-colour;
+  border-left: 10px solid govuk-colour("smbc-green");
   text-align: left;
 }
 
 .smbc-panel--confirmation {
-  @extend .govuk-panel--confirmation; // sass-lint:disable-line placeholder-in-extend
+  @extend .govuk-panel--confirmation;
 
-  background-color: govuk-colour('smbc-green-light');
-  color: govuk-colour('smbc-black');
+  color: govuk-colour("smbc-black");
+  background-color: govuk-colour("smbc-green-light");
 }

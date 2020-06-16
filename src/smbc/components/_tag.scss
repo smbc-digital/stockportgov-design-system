@@ -1,7 +1,8 @@
-@import '../settings/all';
-@import '../helpers/all';
+@import "../settings/all";
+@import "../helpers/all";
 
 .smbc-tag {
   @extend .govuk-tag;
-  background-color: govuk-colour('smbc-green');
+
+  background-color: govuk-colour("smbc-green");
 }
