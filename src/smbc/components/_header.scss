@@ -14,6 +14,11 @@
     @extend .govuk-header__link--homepage;
     font-size: 24px;
   }
+
+  .smbc-header__link--service-name {
+    @extend .govuk-header__link--service-name;
+    font-size: 22px;
+  }
 }
 
 .smbc-header__logo {
