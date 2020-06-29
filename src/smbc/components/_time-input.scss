@@ -1,0 +1,16 @@
+.smbc-time-input__item {
+  @extend .govuk-date-input__item;
+
+  margin-right: 10px;
+}
+
+.smbc-time-input__divider {
+  @extend .govuk-heading-m;
+
+  display: inline-block;
+  margin-right: 10px;
+
+  &::after {
+    content: ":";
+  }
+}
