@@ -3,10 +3,10 @@ name: Build assets
 on:
   push:
     branches:
-      - actions-test
+      - develop
   pull_request:
     branches:
-      - actions-test
+      - develop
 
 jobs:
   build:
