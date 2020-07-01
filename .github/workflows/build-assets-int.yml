@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -25,7 +25,6 @@ jobs:
       with: 
           path: 'package.json'
           prop_path: 'version'
-    - run: echo "::set-env name=Version::${{steps.version.outputs.prop}}"
 
     - name: Install dependencies
       run: npm install
@@ -43,4 +42,4 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: 'eu-west-1'
         SOURCE_DIR: './dist'
-        DEST_DIR: './int/$Version'
+        DEST_DIR: 'int/${{steps.version.outputs.prop}}'
