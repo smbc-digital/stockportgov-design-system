@@ -10,6 +10,13 @@ require('./tasks/gulp/clean.js')
 require('./tasks/gulp/lint.js')
 require('./tasks/gulp/compile-assets.js')
 
+// Umbrella scripts tasks for preview ---
+// Runs js lint and compilation
+// --------------------------------------
+gulp.task('scripts', gulp.series(
+  'js:compile'
+))
+
 // Umbrella styles tasks for preview ----
 // Runs js lint and compilation
 // --------------------------------------
@@ -32,6 +39,7 @@ gulp.task('copy:assets', () => {
 gulp.task('build:dist', gulp.series(
   'clean',
   'styles',
+  'scripts',
   'copy:assets'
 ))
 

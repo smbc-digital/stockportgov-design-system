@@ -10,6 +10,9 @@ const merge = require('merge-stream')
 const taskArguments = require('./task-arguments')
 const rename = require('gulp-rename')
 const cssnano = require('cssnano')
+const rollup = require('gulp-better-rollup')
+const uglify = require('gulp-uglify')
+const eol = require('gulp-eol')
 
 const errorHandler = function (error) {
   // Log the error to the console
@@ -59,4 +62,30 @@ gulp.task('scss:compile', () => {
     .pipe(gulp.dest(taskArguments.destination + '/'))
 
   return merge(compile, compileOldIe)
+})
+
+// Compile js task for preview ----------
+// --------------------------------------
+gulp.task('js:compile', () => {
+  // for dist/ folder we only want compiled 'all.js' file
+  const srcFiles = configPaths.src + 'all.js'
+
+  return gulp.src([
+    srcFiles,
+    '!' + configPaths.src + '**/*.test.js'
+  ])
+    .pipe(rollup({
+      // Used to set the `window` global and UMD/AMD export name.
+      name: 'SMBCFrontend',
+      // UMD allows the published bundle to work in CommonJS and in the browser.
+      format: 'umd'
+    }))
+    .pipe(uglify())
+    .pipe(rename({
+        basename: 'smbc-frontend',
+        extname: '.min.js'
+      })
+    )
+    .pipe(eol())
+    .pipe(gulp.dest(taskArguments.destination))
 })
