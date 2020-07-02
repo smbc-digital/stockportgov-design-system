@@ -24,44 +24,22 @@ const errorHandler = function (error) {
 }
 // different entry points for both streams below and depending on destination flag
 const compileStylesheet = configPaths.src + 'all.scss'
-const compileOldIeStylesheet = configPaths.src + 'all-ie8.scss'
 
 gulp.task('scss:compile', () => {
-  const compile = gulp.src(compileStylesheet)
+  const compile = gulp
+    .src(compileStylesheet)
     .pipe(plumber(errorHandler))
     .pipe(sass())
-    .pipe(postcss([
-      autoprefixer,
-      cssnano
-    ]))
-    .pipe(rename({
+    .pipe(postcss([autoprefixer, cssnano]))
+    .pipe(
+      rename({
         basename: 'smbc-frontend',
         extname: '.min.css'
       })
     )
     .pipe(gulp.dest(taskArguments.destination + '/'))
 
-  const compileOldIe = gulp.src(compileOldIeStylesheet)
-    .pipe(plumber(errorHandler))
-    .pipe(sass())
-    .pipe(postcss([
-      autoprefixer,
-      cssnano,
-      require('oldie')({
-        rgba: { filter: true },
-        rem: { disable: true },
-        unmq: { disable: true },
-        pseudo: { disable: true }
-      })
-    ]))
-    .pipe(rename({
-        basename: 'smbc-frontend-ie8',
-        extname: '.min.css'
-      })
-    )
-    .pipe(gulp.dest(taskArguments.destination + '/'))
-
-  return merge(compile, compileOldIe)
+  return merge(compile)
 })
 
 // Compile js task for preview ----------
@@ -70,18 +48,19 @@ gulp.task('js:compile', () => {
   // for dist/ folder we only want compiled 'all.js' file
   const srcFiles = configPaths.src + 'all.js'
 
-  return gulp.src([
-    srcFiles,
-    '!' + configPaths.src + '**/*.test.js'
-  ])
-    .pipe(rollup({
-      // Used to set the `window` global and UMD/AMD export name.
-      name: 'SMBCFrontend',
-      // UMD allows the published bundle to work in CommonJS and in the browser.
-      format: 'umd'
-    }))
+  return gulp
+    .src([srcFiles, '!' + configPaths.src + '**/*.test.js'])
+    .pipe(
+      rollup({
+        // Used to set the `window` global and UMD/AMD export name.
+        name: 'SMBCFrontend',
+        // UMD allows the published bundle to work in CommonJS and in the browser.
+        format: 'umd'
+      })
+    )
     .pipe(uglify())
-    .pipe(rename({
+    .pipe(
+      rename({
         basename: 'smbc-frontend',
         extname: '.min.js'
       })

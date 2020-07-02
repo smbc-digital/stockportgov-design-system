@@ -10,6 +10,14 @@ require('./tasks/gulp/clean.js')
 require('./tasks/gulp/lint.js')
 require('./tasks/gulp/compile-assets.js')
 
+// All test combined --------------------
+// Runs js, scss and accessibility tests
+// --------------------------------------
+gulp.task('test', gulp.series(
+  'scss:lint',
+  'scss:compile'
+))
+
 // Umbrella scripts tasks for preview ---
 // Runs js lint and compilation
 // --------------------------------------
@@ -32,6 +40,15 @@ gulp.task('copy:assets', () => {
   return gulp.src(paths.src + 'assets/**/*')
     .pipe(gulp.dest(taskArguments.destination + '/assets/'))
 })
+
+// Copy assets task for local -----------
+// Copies files to
+// taskArguments.destination (public)
+// --------------------------------------
+gulp.task('copy-assets', gulp.series(
+  'styles',
+  'scripts'
+))
 
 // Build dist task -----------------
 // Compile scss into css

@@ -10,8 +10,8 @@ const del = require('del')
 
 gulp.task('clean', () => {
   const destination = taskArguments.destination
-  
+
   return del([
-      `${destination}/**/*`
-    ])
+    `${destination}/**/*`
+  ])
 })
