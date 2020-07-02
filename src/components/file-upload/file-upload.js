@@ -1,17 +1,17 @@
-document['getElementsByRegex'] = function (pattern) {
+function findRecursively(aNode, regularExpression) { // recursive function to traverse DOM
+    if (!aNode)
+        return;
+    if (aNode.id !== undefined && aNode.id.search(regularExpression) != -1)
+        arrElements.push(aNode);  // FOUND ONE!
+    for (var idx in aNode.childNodes) // search children...
+        findRecursively(aNode.childNodes[idx]);
+};
+
+function GetElementsByRegex(pattern) {
     var arrElements = [];   // to accumulate matching elements
-    var re = new RegExp(pattern);   // the regex to match with
+    var regularExpression = new RegExp(pattern);   // the regex to match with
 
-    function findRecursively(aNode) { // recursive function to traverse DOM
-        if (!aNode)
-            return;
-        if (aNode.id !== undefined && aNode.id.search(re) != -1)
-            arrElements.push(aNode);  // FOUND ONE!
-        for (var idx in aNode.childNodes) // search children...
-            findRecursively(aNode.childNodes[idx]);
-    };
-
-    findRecursively(document); // initiate recursive matching
+    findRecursively(document, regularExpression); // initiate recursive matching
     return arrElements; // return matching elements
 };
 
@@ -31,7 +31,7 @@ function ValidateSize(file) {
     } else {
         sizeValidation.style.display = 'none';
         input.removeAttribute('aria-describedby');
-        var fileSizeErrors = document.getElementsByRegex('-fileSizeError*');
+        var fileSizeErrors = GetElementsByRegex('-fileSizeError*');
         var errorCount = 0;
         for (var input = 0; input < fileSizeErrors.length; input++) {
             if (fileSizeErrors[input].style.display === 'block') {
