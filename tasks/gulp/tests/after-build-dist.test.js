@@ -59,4 +59,12 @@ describe('dist/', () => {
       expect(stylesheet).not.toMatch(/body:before{content:/)
     })
   })
+
+  describe(`govuk-frontend.min.js`, () => {
+    const javascript = lib.readFileContents(path.join(configPaths.dist, `vendor/govuk-frontend.min.js`))
+
+    it('should not be null', () => {
+      expect(javascript).not.toBeNull()
+    })
+  })
 })

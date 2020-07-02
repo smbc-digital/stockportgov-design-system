@@ -68,3 +68,22 @@ gulp.task('js:compile', () => {
     .pipe(eol())
     .pipe(gulp.dest(taskArguments.destination))
 })
+
+// Compile vendor js task for preview ----------
+// --------------------------------------
+gulp.task('vendor:compile', () => {
+  // for dist/ folder we only want compiled 'all.js' file
+  const srcFiles = configPaths.vendor + 'all.js'
+
+  return gulp
+    .src([srcFiles, '!' + configPaths.src + '**/*.test.js'])
+    .pipe(uglify())
+    .pipe(
+      rename({
+        basename: 'govuk-frontend',
+        extname: '.min.js'
+      })
+    )
+    .pipe(eol())
+    .pipe(gulp.dest(taskArguments.destination + '/vendor/'))
+})

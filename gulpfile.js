@@ -34,12 +34,19 @@ gulp.task('styles', gulp.series(
 ))
 
 // Copy assets task ----------------------
-// Copies assets to taskArguments.destination (public)
+// Copies assets to taskArguments.destination
 // --------------------------------------
 gulp.task('copy:assets', () => {
   return gulp.src(paths.src + 'assets/**/*')
     .pipe(gulp.dest(taskArguments.destination + '/assets/'))
 })
+
+// Copy vendor assets task ----------------------
+// Copies vendor assets to taskArguments.destination
+// --------------------------------------
+gulp.task('copy:vendor-assets', gulp.series(
+  'vendor:compile'
+))
 
 // Copy assets task for local -----------
 // Copies files to
@@ -57,7 +64,8 @@ gulp.task('build:dist', gulp.series(
   'clean',
   'styles',
   'scripts',
-  'copy:assets'
+  'copy:assets',
+  'copy:vendor-assets'
 ))
 
 // Default task -------------------------
