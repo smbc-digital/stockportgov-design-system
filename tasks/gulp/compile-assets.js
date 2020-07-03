@@ -13,20 +13,21 @@ const cssnano = require('cssnano')
 const rollup = require('gulp-better-rollup')
 const uglify = require('gulp-uglify')
 const eol = require('gulp-eol')
+const concat = require('gulp-concat')
 
 const errorHandler = function (error) {
-  // Log the error to the console
   console.error(error.message)
 
-  // Ensure the task we're running exits with an error code
   this.once('finish', () => process.exit(1))
   this.emit('end')
 }
-// different entry points for both streams below and depending on destination flag
-const compileStylesheet = configPaths.src + 'all.scss'
 
+// Compile sass task --------------------
+// --------------------------------------
 gulp.task('scss:compile', () => {
-  const compile = gulp
+  const compileStylesheet = configPaths.src + 'all.scss'
+
+  return gulp
     .src(compileStylesheet)
     .pipe(plumber(errorHandler))
     .pipe(sass())
@@ -38,17 +39,14 @@ gulp.task('scss:compile', () => {
       })
     )
     .pipe(gulp.dest(taskArguments.destination + '/'))
-
-  return merge(compile)
 })
 
-// Compile js task for preview ----------
+// Compile js task ----------------------
 // --------------------------------------
 gulp.task('js:compile', () => {
-  // for dist/ folder we only want compiled 'all.js' file
   const srcFiles = configPaths.src + 'all.js'
 
-  return gulp
+  const SMBCFrontend = gulp
     .src([srcFiles, '!' + configPaths.src + '**/*.test.js'])
     .pipe(
       rollup({
@@ -59,31 +57,14 @@ gulp.task('js:compile', () => {
       })
     )
     .pipe(uglify())
-    .pipe(
-      rename({
-        basename: 'smbc-frontend',
-        extname: '.min.js'
-      })
-    )
     .pipe(eol())
-    .pipe(gulp.dest(taskArguments.destination))
-})
 
-// Compile vendor js task for preview ----------
-// --------------------------------------
-gulp.task('vendor:compile', () => {
-  // for dist/ folder we only want compiled 'all.js' file
-  const srcFiles = configPaths.vendor + 'all.js'
-
-  return gulp
-    .src([srcFiles, '!' + configPaths.src + '**/*.test.js'])
+  const GOVUKFrontend = gulp
+    .src(configPaths.GOVUKFrontend + 'all.js')
     .pipe(uglify())
-    .pipe(
-      rename({
-        basename: 'govuk-frontend',
-        extname: '.min.js'
-      })
-    )
     .pipe(eol())
-    .pipe(gulp.dest(taskArguments.destination + '/vendor/'))
+
+  return merge(SMBCFrontend, GOVUKFrontend)
+    .pipe(concat('smbc-frontend.min.js'))
+    .pipe(gulp.dest(taskArguments.destination))
 })

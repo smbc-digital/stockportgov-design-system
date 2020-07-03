@@ -19,6 +19,7 @@
     "govuk-frontend": "^3.7.0",
     "gulp": "^4.0.2",
     "gulp-better-rollup": "3.1.0",
+    "gulp-concat": "^2.6.1",
     "gulp-eol": "^0.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",

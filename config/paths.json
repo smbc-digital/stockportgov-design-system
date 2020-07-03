@@ -2,5 +2,5 @@
   "dist": "dist/",
   "src": "src/",
   "config": "config/",
-  "vendor": "node_modules/govuk-frontend/govuk/"
+  "GOVUKFrontend": "node_modules/govuk-frontend/govuk/"
 }

@@ -60,8 +60,8 @@ describe('dist/', () => {
     })
   })
 
-  describe(`govuk-frontend.min.js`, () => {
-    const javascript = lib.readFileContents(path.join(configPaths.dist, `vendor/govuk-frontend.min.js`))
+  describe(`smbc-frontend.min.js`, () => {
+    const javascript = lib.readFileContents(path.join(configPaths.dist, `smbc-frontend.min.js`))
 
     it('should not be null', () => {
       expect(javascript).not.toBeNull()
