@@ -15,23 +15,36 @@
     "cz-conventional-changelog": "^3.1.0",
     "cz-customizable": "^6.2.0",
     "del": "^5.1.0",
-    "govuk-frontend": "^3.6.0",
+    "eslint": "^6.7.0",
+    "govuk-frontend": "^3.7.0",
     "gulp": "^4.0.2",
+    "gulp-better-rollup": "3.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-eol": "^0.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sass-lint": "^1.4.0",
     "gulp-task-listing": "^1.1.0",
+    "gulp-uglify": "^3.0.2",
     "husky": "^4.2.3",
     "jest": "^25.1.0",
+    "jest-axe": "^3.2.0",
+    "jest-puppeteer": "^4.3.0",
+    "jest-serializer-html": "^7.0.0",
     "merge-stream": "^2.0.0",
     "oldie": "^1.3.0",
     "path": "^0.12.7",
-    "recursive-readdir": "^2.2.2"
+    "puppeteer": "^1.14.0",
+    "recursive-readdir": "^2.2.2",
+    "sassdoc": "^2.7.0",
+    "standard": "^13.1.0"
   },
   "scripts": {
     "build:dist": "node bin/check-nvmrc.js && gulp build:dist --destination dist && npm run test:build:dist",
+    "test": "npm run test:dependencies && standard && gulp test && gulp copy-assets && jest --testPathIgnorePatterns='after-*'",
+    "test:dependencies": "npm ls --depth=0",
     "test:build:dist": "jest tasks/gulp/tests/after-build-dist.test.js"
   },
   "commitlint": {
@@ -79,6 +92,36 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "browserslist": [
+    ">0.1%",
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Edge versions",
+    "last 2 Samsung versions",
+    "Safari >= 9",
+    "ie 8-11",
+    "iOS >= 9"
+  ],
+  "standard": {
+    "globals": [
+      "page",
+      "browser",
+      "context",
+      "jestPuppeteer"
+    ],
+    "ignore": [
+      "/dist/**/*.js"
+    ]
+  },
+  "jest": {
+    "preset": "jest-puppeteer",
+    "setupFilesAfterEnv": [
+      "./config/jest-setup.js"
+    ],
+    "snapshotSerializers": [
+      "jest-serializer-html"
+    ]
   },
   "author": "StockportGovUK",
   "license": "ISC"

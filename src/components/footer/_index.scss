@@ -1,5 +1,5 @@
-@import "../settings/all";
-@import "../helpers/all";
+@import "../../settings/all";
+@import "../../helpers/all";
 
 .smbc-footer {
   @extend .govuk-footer; // sass-lint:disable-line placeholder-in-extend

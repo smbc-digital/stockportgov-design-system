@@ -60,11 +60,11 @@ describe('dist/', () => {
     })
   })
 
-  describe(`smbc-frontend-ie8.min.css`, () => {
-    const stylesheet = lib.readFileContents(path.join(configPaths.dist, `smbc-frontend-ie8.min.css`))
+  describe(`smbc-frontend.min.js`, () => {
+    const javascript = lib.readFileContents(path.join(configPaths.dist, `smbc-frontend.min.js`))
 
-    it('should not contain current media query displayed on body element', () => {
-      expect(stylesheet).not.toMatch(/body:before{content:/)
+    it('should not be null', () => {
+      expect(javascript).not.toBeNull()
     })
   })
 })
