@@ -1,22 +1,23 @@
-function findRecursively(arrElements, aNode) { // recursive function to traverse DOM
-  var regexPattern = new RegExp('-fileSizeError*');
-  
-  if (!aNode)
-      return;
-  if (aNode.id !== undefined && aNode.id.search(regexPattern) != -1)
-      arrElements.push(aNode);  // FOUND ONE!
-  for (var idx in aNode.childNodes) // search children...
-      findRecursively(arrElements, aNode.childNodes[idx]);
+function findRecursively (arrElements, aNode) {
+  var regexPattern = new RegExp('-fileSizeError*')
+
+  if (!aNode) return
+  if (aNode.id !== undefined && aNode.id.search(regexPattern) !== -1) {
+    arrElements.push(aNode)
+  }
+  for (var idx in aNode.childNodes) {
+    findRecursively(arrElements, aNode.childNodes[idx])
+  }
 };
 
 function getElementsByRegex () {
-  var arrElements = [];   // to accumulate matching elements
-  findRecursively(arrElements, document); // initiate recursive matching
-  return arrElements; // return matching elements
+  var arrElements = []
+  findRecursively(arrElements, document)
+  return arrElements
 };
 
 function ValidateSize (file) {
-  var FileSize = file.files[0].size / 1024 / 1024 // in MB
+  var FileSize = file.files[0].size / 1024 / 1024
   var sizeValidation = document.getElementById(file.id + '-fileSizeError')
   var next = document.getElementsByClassName('govuk-button')
   var input = document.getElementById(file.id)
