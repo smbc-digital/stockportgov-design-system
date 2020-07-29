@@ -1,8 +1,7 @@
 @import "../../helpers/all";
 @import "../../settings/all";
 
-#root > #map.leaflet-container .leaflet-control-container, // sass-lint:disable-line no-ids
-#map.leaflet-container .leaflet-control-container { // sass-lint:disable-line no-ids
+.smbc-map__container .leaflet-control-container { // sass-lint:disable-line no-ids
   display: flex;
   height: 100%;
   flex-direction: row;
