@@ -16,7 +16,7 @@
   background-color: govuk-colour("smbc-green-light");
 }
 
-.smbc-panel--warning {
+.smbc-panel--error {
   @extend .govuk-panel--confirmation;
 
   background-color: govuk-colour("red");
