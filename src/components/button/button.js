@@ -6,7 +6,7 @@ function Button ($module) {
 }
 
 /**
-* If data-disable-on-click is true then the button is disabled on 
+* If data-disable-on-click is true then the button is disabled on
 * first click by the user.
 */
 Button.prototype.disable = function (event) {
