@@ -16,7 +16,7 @@ Button.prototype.disable = function (event) {
     return
   }
 
-  if(target.classList.contains('govuk-button--disabled')){
+  if (target.classList.contains('govuk-button--disabled')) {
     event.preventDefault()
     return false
   }
