@@ -55,6 +55,10 @@
       outline: none;
       background: none;
       flex-grow: 1;
+
+      @include govuk-media-query($from: mobile) {
+        max-width: 70% !important;
+      }
     }
 
     .search-tooltip {
