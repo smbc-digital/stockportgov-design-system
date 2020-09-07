@@ -49,7 +49,7 @@
 
     input.search-input { // sass-lint:disable-line no-qualifying-elements
       display: block !important;
-      max-width: 85%;
+      max-width: 85% !important;
       height: 28px;
       border: 0 !important;
       outline: none;
