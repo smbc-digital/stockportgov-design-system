@@ -1,0 +1,8 @@
+@import "../../settings/all";
+@import "../../helpers/all";
+
+.smbc-table {
+  @extend .govuk-table;
+  padding-left: 0;
+  text-align: left;
+  }
