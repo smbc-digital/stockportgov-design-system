@@ -1,0 +1,19 @@
+@import "../../settings/all";
+@import "../../helpers/all";
+
+.smbc-button--clear {
+  @extend .govuk-button;
+
+  margin-bottom: 0;
+  padding: 0;
+  border: none;  // sass-lint:disable-line border-zero
+  color: govuk-colour("blue");
+  background: none;
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:hover {
+    color: govuk-colour("blue");
+    background-color: unset;  // sass-lint:disable-line border-zero
+  }
+}
