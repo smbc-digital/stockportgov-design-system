@@ -1,9 +1,7 @@
 @import "../../settings/all";
 @import "../../helpers/all";
 
-.smbc-button--clear {
-  @extend .govuk-button;
-
+.smbc-button--link {
   margin-bottom: 0;
   padding: 0;
   border: none;  // sass-lint:disable-line border-zero
