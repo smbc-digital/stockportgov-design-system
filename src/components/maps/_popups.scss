@@ -1,0 +1,90 @@
+@import "../../helpers/all";
+@import "../../settings/all";
+
+.leaflet-popup > .leaflet-popup-content-wrapper {
+  width: 100%;
+  border-radius: 3px;
+  color: govuk-colour("white");
+  background-color: rgba(0, 0, 0, 0.9); // sass-lint:disable-line no-color-literals leading-zero
+
+  .leaflet-popup-content {
+    &:not(:last-of-type) {
+      border-bottom: 2px solid govuk-colour("light-grey");
+    }
+
+    .item {
+      padding-left: 24px;
+
+      > .title { // sass-lint:disable-line no-qualifying-elements
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
+        color: govuk-colour("light-grey");
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+
+    .info {
+      margin-top: 0;
+    }
+
+    .fa {
+      position: absolute;
+      left: 14px;
+      padding-left: 6px;
+      color: govuk-colour("light-grey");
+      line-height: 1.316;
+    }
+
+    a {
+      color: govuk-colour("white");
+    }
+
+    .button-primary {
+      box-sizing: border-box;
+      width: 100%;
+      margin-bottom: 10px;
+      font: 1em/2 $govuk-font-family;
+    }
+
+    div[class^="message-"] {
+      box-sizing: border-box;
+      width: 100%;
+      min-width: 0;
+      margin-bottom: 10px;
+      padding: 20px;
+      border-radius: 3px;
+      line-height: 20px;
+      text-align: center;
+    }
+
+    .message-fault {
+      color: govuk-colour("white");
+      background-color: $govuk-error-colour;
+    }
+
+    .message-maintenance {
+      color: govuk-colour("smbc-black");
+      background-color: govuk-colour("orange");
+    }
+
+    .last-updated {
+      color: govuk-colour("light-grey");
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+}
+
+.smbc-map__container .leaflet-popup > .leaflet-popup-close-button {
+  display: inline-block;
+  padding-right: 6px;
+  font: normal normal 600 24px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.leaflet-popup-tip-container > .leaflet-popup-tip {
+  background-color: rgba(0, 0, 0, 0.9); // sass-lint:disable-line no-color-literals leading-zero
+}

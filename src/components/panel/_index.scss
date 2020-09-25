@@ -1,5 +1,5 @@
-@import "../settings/all";
-@import "../helpers/all";
+@import "../../settings/all";
+@import "../../helpers/all";
 
 .smbc-panel {
   @extend .govuk-panel;
@@ -14,4 +14,16 @@
 
   color: govuk-colour("smbc-black");
   background-color: govuk-colour("smbc-green-light");
+}
+
+.smbc-panel--error {
+  @extend .govuk-panel--confirmation;
+
+  background-color: govuk-colour("red");
+}
+
+.smbc-panel__body {
+  @extend .govuk-body;
+
+  margin-bottom: 0;
 }

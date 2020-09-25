@@ -1,0 +1,144 @@
+@import "../../helpers/all";
+@import "../../settings/all";
+
+.smbc-map__container .leaflet-control-container { // sass-lint:disable-line no-ids
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+
+  .leaflet-control-layers-toggle,
+  .leaflet-control-zoom-in,
+  .leaflet-control-zoom-out,
+  .leaflet-control-fullscreen-button {
+    margin-bottom: 0;
+  }
+
+  .leaflet-control-layers-selector {
+    display: inline-block;
+    width: 15px;
+    margin-bottom: 0;
+  }
+
+  .leaflet-control-layers-toggle {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .leaflet-top.leaflet-left {
+    position: relative;
+    order: 1;
+  }
+
+  .leaflet-top.leaflet-right {
+    position: relative;
+    order: 3;
+  }
+
+  .leaflet-bottom.leaflet-left {
+    position: relative;
+    padding: 10px;
+    flex-grow: 1;
+    order: 2;
+  }
+
+  .leaflet-control-search.leaflet-control {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    background-color: govuk-colour("white");
+
+    input.search-input { // sass-lint:disable-line no-qualifying-elements
+      display: block !important;
+      max-width: 70% !important;
+      height: 28px;
+      border: 0 !important;
+      outline: none;
+      background: none;
+      flex-grow: 1;
+
+      @include govuk-media-query($from: desktop) {
+        max-width: 85% !important;
+      }
+    }
+
+    .search-tooltip {
+      display: block;
+      z-index: 1;
+      width: 100%;
+      max-height: 200px !important;
+      margin: 0;
+      margin-top: 1px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, .2) !important; // sass-lint:disable-line no-color-literals
+
+      > .search-tip {
+        margin: 0;
+        padding: 7px;
+        border-bottom: 1px govuk-colour("light-grey") solid;
+        border-radius: 0;
+        background: govuk-colour("white");
+        font-size: .75em;
+        cursor: pointer;
+
+        &:hover {
+          color: govuk-colour("white");
+          background-color: govuk-colour("dark-grey");
+        }
+      }
+
+      > .search-tip-select { // sass-lint:disable-line no-qualifying-elements
+        border-top: 3px solid $govuk-focus-colour;
+        border-bottom: 3px solid $govuk-focus-colour;
+        color: govuk-colour("white");
+        background-color: govuk-colour("dark-grey");
+      }
+    }
+
+    .search-alert {
+      display: none !important;
+    }
+
+    .search-button {
+      display: block !important;
+      position: absolute;
+      right: 5px;
+      height: 32px;
+      margin-bottom: 0;
+      padding-top: 4px;
+      background: none !important;
+      line-height: 26px;
+      text-decoration: none;
+
+      &::after {
+        content: "\f002";
+        padding: 0 12px 0 6px;
+        border: 0;
+        color: govuk-colour("dark-grey");
+        background: 0 0;
+        font-family: "FontAwesome";
+        font-size: 20px;
+      }
+    }
+
+    .search-cancel {
+      height: 32px;
+      margin-top: 4px;
+      margin-bottom: 0;
+      background: none !important;
+      line-height: 26px;
+
+      &:hover {
+        background-color: govuk-colour("light-grey");
+      }
+
+      &::after {
+        content: "\f00d";
+        visibility: visible;
+        border: 0;
+        color: govuk-colour("dark-grey");
+        background: 0 0;
+        font-family: "FontAwesome";
+        font-size: 20px;
+      }
+    }
+  }
+}

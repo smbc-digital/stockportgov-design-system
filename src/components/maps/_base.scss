@@ -1,0 +1,16 @@
+@import "../../helpers/all";
+@import "../../settings/all";
+
+.smbc-map__container { // sass-lint:disable-line no-ids
+  box-sizing: border-box;
+  width: 100%;
+  max-width: unset;
+  height: 500px;
+  margin-bottom: 20px;
+  border: 0;
+  font: 19px / 2 $govuk-font-family;
+
+  @include govuk-media-query($from: mobile) {
+    font: 16px / 2 $govuk-font-family;
+  }
+}

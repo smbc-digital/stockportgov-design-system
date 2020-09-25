@@ -1,5 +1,6 @@
 {
   "dist": "dist/",
-  "src": "src/smbc/",
-  "config": "config/"
+  "src": "src/",
+  "config": "config/",
+  "GOVUKFrontend": "node_modules/govuk-frontend/govuk/"
 }

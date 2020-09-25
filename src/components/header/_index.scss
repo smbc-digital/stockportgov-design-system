@@ -1,5 +1,5 @@
-@import "../helpers/all";
-@import "../settings/all";
+@import "../../helpers/all";
+@import "../../settings/all";
 
 .smbc-header {
   @extend .govuk-header;
@@ -13,6 +13,11 @@
   .smbc-header__link--homepage {
     @extend .govuk-header__link--homepage;
     font-size: 24px;
+  }
+
+  .smbc-header__link--service-name {
+    @extend .govuk-header__link--service-name;
+    font-size: 22px;
   }
 }
 
