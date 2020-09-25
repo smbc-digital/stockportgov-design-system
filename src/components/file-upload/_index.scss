@@ -1,0 +1,6 @@
+.smbc-file-upload {
+  @extend .govuk-file-upload;
+
+  width: 100%;
+  text-overflow: ellipsis;
+}

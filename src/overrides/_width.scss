@@ -1,0 +1,27 @@
+////
+/// @group overrides
+////
+
+$_width-percentage: (
+  10,
+  20,
+  30,
+  40,
+  50,
+  60,
+  70,
+  80,
+  90,
+  100
+  ) !default;
+
+@mixin _smbc-generate-width-overrides {
+  @each $percentage in $_width-percentage {
+
+    .smbc-\!-width-#{$percentage} {
+      width: #{$percentage}#{"%"};
+    }
+  }
+}
+
+@include _smbc-generate-width-overrides;
