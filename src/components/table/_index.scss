@@ -1,6 +1,4 @@
 .smbc-table__cell--wrap {
   max-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  word-break: break-all;
 }
