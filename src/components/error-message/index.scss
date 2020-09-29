@@ -1,0 +1,7 @@
+
+.smbc-error-message {
+  @extend .govuk-error-message;
+
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
