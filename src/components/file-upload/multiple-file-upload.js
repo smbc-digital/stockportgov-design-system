@@ -14,7 +14,7 @@ function MultipleFileUpload ($module) {
 MultipleFileUpload.prototype.validateFileSize = function (event) {
   var target = event.target
   var sizeValidation = document.getElementById(target.id + '-fileSizeError')
-  var formGroup = document.getElementById("multiple-file-upload-form-group")
+  var formGroup = document.getElementById('multiple-file-upload-form-group')
   var input = document.getElementById(target.id)
   var validation = document.getElementById(target.id + '-error')
   var errorText = '<span class="govuk-visually-hidden"Error:></span> '
@@ -32,11 +32,9 @@ MultipleFileUpload.prototype.validateFileSize = function (event) {
       sizeValidation.setAttribute('style', 'white-space: pre-line;')
       if (target.files.length === 1) {
         errorText += 'The file must be smaller than 23MB'
-      }
-      else {
+      } else {
         errorText += target.files[index].name + ' must be smaller than 23MB\r\n'
       }
-      
       allValid = false
       formGroup.classList.add('govuk-form-group--error')
     }
