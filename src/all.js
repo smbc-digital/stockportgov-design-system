@@ -1,6 +1,7 @@
 import { nodeListForEach } from './common'
 import Button from './components/button/button'
 import FileUpload from './components/file-upload/file-upload'
+import MultipleFileUpload from './components/file-upload/multiple-file-upload'
 
 function initAll (options) {
   // Set the options to an empty object by default if no options are passed.
@@ -19,10 +20,16 @@ function initAll (options) {
   nodeListForEach($fileUploads, function ($fileUpload) {
     new FileUpload($fileUpload).init()
   })
+
+  var $multipleFileUploads = scope.querySelectorAll('[data-module="smbc-multiple-file-upload"]')
+  nodeListForEach($multipleFileUploads, function ($multipleFileUpload) {
+    new MultipleFileUpload($multipleFileUpload).init()
+  })
 }
 
 export {
   initAll,
   Button,
-  FileUpload
+  FileUpload,
+  MultipleFileUpload
 }
