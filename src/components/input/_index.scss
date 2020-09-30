@@ -1,0 +1,12 @@
+@import "../../helpers/all";
+@import "../../settings/all";
+
+.smbc-input--file-error {
+
+  padding-left: govuk-spacing(2);
+
+  &:focus-within {
+
+    padding-left: 15px;
+    }
+  }
