@@ -3,7 +3,7 @@ import 'govuk-frontend/govuk/vendor/polyfills/Function/prototype/bind'
 
 var MAX_FILE_SIZE = 23
 
-function MultipleFileUpload ($module) {
+function MultipleFileUpload($module) {
   this.$module = $module
 }
 
@@ -45,7 +45,10 @@ MultipleFileUpload.prototype.validateFileSize = function (event) {
   if (allValid) {
     sizeValidation.style.display = 'none'
     input.removeAttribute('aria-describedby')
-    formGroup.classList.remove('govuk-form-group--error')
+
+    if (!formGroup.classList.contains('govuk-form-group--error')) {
+      formGroup.classList.remove('govuk-form-group--error');
+    }
   }
 }
 
