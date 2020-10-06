@@ -35,7 +35,7 @@ MultipleFileUpload.prototype.validateFileSize = function (event) {
       input.setAttribute('aria-describedby', target.id + '-fileSizeError')
       sizeValidation.setAttribute('style', 'white-space: pre-line;')
       if (target.files.length === 1) {
-        errorText += 'The file must be smaller than ' + readableMaxFileSize
+        errorText += 'The selected file must be smaller than ' + readableMaxFileSize
       } else {
         errorText += target.files[index].name + ' must be smaller than ' + readableMaxFileSize + '\r\n'
       }
