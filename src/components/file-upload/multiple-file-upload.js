@@ -1,7 +1,9 @@
 import 'govuk-frontend/govuk/vendor/polyfills/Event' // addEventListener and event.target normaliziation
 import 'govuk-frontend/govuk/vendor/polyfills/Function/prototype/bind'
 
-var MAX_FILE_SIZE = 23
+var INPUT_FILE_ERROR_CLASS = 'smbc-input--file-error'
+var FORM_GROUP_ERROR_CLASS = 'govuk-form-group--error'
+var INPUT_ERROR_CLASS = 'govuk-input--error'
 
 function MultipleFileUpload ($module) {
   this.$module = $module
@@ -9,7 +11,7 @@ function MultipleFileUpload ($module) {
 
 /**
 * When a file is selected via a html input of type file, This will validate that the file
-* selected is not over 23Mb
+* selected is not over the specified max file size
 */
 MultipleFileUpload.prototype.validateFileSize = function (event) {
   var target = event.target
@@ -19,11 +21,13 @@ MultipleFileUpload.prototype.validateFileSize = function (event) {
   var validation = document.getElementById(target.id + '-error')
   var errorText = '<span class="govuk-visually-hidden"Error:></span> '
   var allValid = true
+  var maxFileSize = target.getAttribute('data-individual-file-size')
+  var readableMaxFileSize = (maxFileSize / 1024000).toFixed(0) + 'MB'
 
   for (var index = 0; index < target.files.length; index++) {
-    var fileSize = target.files[index].size / 1024 / 1024
+    var fileSize = target.files[index].size
 
-    if (fileSize > MAX_FILE_SIZE) {
+    if (fileSize > maxFileSize) {
       if (validation !== null) {
         validation.remove()
       }
@@ -31,12 +35,12 @@ MultipleFileUpload.prototype.validateFileSize = function (event) {
       input.setAttribute('aria-describedby', target.id + '-fileSizeError')
       sizeValidation.setAttribute('style', 'white-space: pre-line;')
       if (target.files.length === 1) {
-        errorText += 'The file must be smaller than 23MB'
+        errorText += 'The file must be smaller than ' + readableMaxFileSize
       } else {
-        errorText += target.files[index].name + ' must be smaller than 23MB\r\n'
+        errorText += target.files[index].name + ' must be smaller than ' + readableMaxFileSize + '\r\n'
       }
       allValid = false
-      formGroup.classList.add('govuk-form-group--error')
+      formGroup.classList.add(FORM_GROUP_ERROR_CLASS)
     }
   }
 
@@ -49,16 +53,16 @@ MultipleFileUpload.prototype.validateFileSize = function (event) {
     }
     input.removeAttribute('aria-describedby')
 
-    if (input.classList.contains('govuk-input--error')) {
-      input.classList.remove('govuk-input--error')
+    if (input.classList.contains(INPUT_ERROR_CLASS)) {
+      input.classList.remove(INPUT_ERROR_CLASS)
     }
 
-    if (input.classList.contains('smbc-input--file-error')) {
-      input.classList.remove('smbc-input--file-error')
+    if (input.classList.contains(INPUT_FILE_ERROR_CLASS)) {
+      input.classList.remove(INPUT_FILE_ERROR_CLASS)
     }
 
-    if (formGroup.classList.contains('govuk-form-group--error')) {
-      formGroup.classList.remove('govuk-form-group--error')
+    if (formGroup.classList.contains(FORM_GROUP_ERROR_CLASS)) {
+      formGroup.classList.remove(FORM_GROUP_ERROR_CLASS)
     }
   }
 }
