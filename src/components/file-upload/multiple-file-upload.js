@@ -37,7 +37,7 @@ MultipleFileUpload.prototype.validateFileSize = function (event) {
       if (target.files.length === 1) {
         errorText += 'The file must be smaller than ' + readableMaxFileSize
       } else {
-        errorText += target.files[index].name + ' must be smaller than '+ readableMaxFileSize + '\r\n'
+        errorText += target.files[index].name + ' must be smaller than ' + readableMaxFileSize + '\r\n'
       }
       allValid = false
       formGroup.classList.add(FORM_GROUP_ERROR_CLASS)
