@@ -46,7 +46,15 @@ MultipleFileUpload.prototype.validateFileSize = function (event) {
     sizeValidation.style.display = 'none'
     input.removeAttribute('aria-describedby')
 
-    if (!formGroup.classList.contains('govuk-form-group--error')) {
+    if (input.classList.contains('govuk-input--error')) {
+      input.classList.remove('govuk-input--error')
+    }
+
+    if (input.classList.contains('smbc-input--file-error')) {
+      input.classList.remove('smbc-input--file-error')
+    }
+
+    if (formGroup.classList.contains('govuk-form-group--error')) {
       formGroup.classList.remove('govuk-form-group--error')
     }
   }
