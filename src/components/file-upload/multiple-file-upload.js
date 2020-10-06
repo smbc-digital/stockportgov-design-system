@@ -44,6 +44,9 @@ MultipleFileUpload.prototype.validateFileSize = function (event) {
 
   if (allValid) {
     sizeValidation.style.display = 'none'
+    if (validation !== null) {
+      validation.remove()
+    }
     input.removeAttribute('aria-describedby')
 
     if (input.classList.contains('govuk-input--error')) {
