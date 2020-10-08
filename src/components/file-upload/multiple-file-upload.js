@@ -73,9 +73,7 @@ MultipleFileUpload.prototype.validateFileSize = function (event) {
 * via the html input
 */
 MultipleFileUpload.prototype.disableButtonOnNoFilesSelected = function (event) {
-  var target = event.target
-
-  this.disabled = target.files.length > 0 
+  this.disabled = event.target.files.length > 0 
     ? this.disabled = false 
     : this.disabled = true
 }
