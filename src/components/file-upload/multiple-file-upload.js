@@ -22,7 +22,7 @@ MultipleFileUpload.prototype.validateFileSize = function (event) {
   var errorText = '<span class="govuk-visually-hidden"Error:></span> '
   var allValid = true
   var maxFileSize = target.getAttribute('data-individual-file-size')
-  var readableMaxFileSize = (maxFileSize / 1024000).toFixed(0) + 'MB'
+  var readableMaxFileSize = (maxFileSize / 1048576) + 'MB'
 
   for (var index = 0; index < target.files.length; index++) {
     var fileSize = target.files[index].size
