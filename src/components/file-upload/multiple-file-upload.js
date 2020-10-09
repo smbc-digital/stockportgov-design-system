@@ -8,6 +8,7 @@ var INPUT_ERROR_CLASS = 'govuk-input--error'
 function MultipleFileUpload ($module) {
   this.$module = $module
   this.$uploadFileButton = document.getElementById('upload')
+  this.$uploadFileInformation = document.getElementById('upload-information')
   this.$formGroup = document.getElementById('multiple-file-upload-form-group')
   this.maxFileSize = this.$module.getAttribute('data-individual-file-size')
   this.sizeValidation = document.getElementById(this.$module.id + '-fileSizeError')
@@ -73,18 +74,26 @@ MultipleFileUpload.prototype.validateFileSize = function (event) {
 * via the html input
 */
 MultipleFileUpload.prototype.disableButtonOnNoFilesSelected = function (event) {
-  this.disabled = event.target.files.length > 0 
-    ? this.disabled = false 
-    : this.disabled = true
+  if(event.target.files.length > 0 ){
+    this.$uploadFileButton.disabled = false
+    this.$uploadFileButton.setAttribute("aria-disabled", false)
+    this.$uploadFileInformation.innerHTML = "Upload button is currently enabled"
+  } else {
+    this.$uploadFileButton.disabled = true
+    this.$uploadFileButton.setAttribute("aria-disabled", true)
+    this.$uploadFileInformation.innerHTML = "Upload button is currently disabled"
+  }
 }
 
 /**
-* Initialise an event listener for onchange on the element
-*/
+ * Initialise an event listener for onchange on the element
+ */
 MultipleFileUpload.prototype.init = function () {
   this.$uploadFileButton.disabled = true
+  this.$uploadFileButton.setAttribute("aria-disabled", true);
+  this.$uploadFileInformation.innerHTML = "Upload button is currently disabled"
   this.$module.addEventListener('change', this.validateFileSize.bind(this))
-  this.$module.addEventListener('change', this.disableButtonOnNoFilesSelected.bind(this.$uploadFileButton))
+  this.$module.addEventListener('change', this.disableButtonOnNoFilesSelected.bind(this))
 }
 
 export default MultipleFileUpload
