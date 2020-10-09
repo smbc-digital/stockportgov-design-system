@@ -14,7 +14,7 @@ function MultipleFileUpload ($module) {
   this.$formGroup = document.getElementById('multiple-file-upload-form-group')
   this.maxFileSize = this.$module.getAttribute('data-individual-file-size')
   this.sizeValidation = document.getElementById(this.$module.id + '-fileSizeError')
-  this.readableMaxFileSize  = (this.maxFileSize / 1048576) + 'MB'
+  this.readableMaxFileSize = (this.maxFileSize / 1048576) + 'MB'
 }
 
 /**
@@ -70,19 +70,18 @@ MultipleFileUpload.prototype.validateFileSize = function (event) {
   }
 }
 
-
 /**
 * Disable the upload files button, when no files have been selected
 * via the html input
 */
 MultipleFileUpload.prototype.disableButtonOnNoFilesSelected = function (event) {
-  if(event.target.files.length > 0 ){
+  if (event.target.files.length > 0) {
     this.$uploadFileButton.disabled = false
-    this.$uploadFileButton.setAttribute("aria-disabled", false)
+    this.$uploadFileButton.setAttribute('aria-disabled', false)
     this.$uploadFileInformation.innerHTML = UPLOAD_FILES_ENABLED_TEXT
   } else {
     this.$uploadFileButton.disabled = true
-    this.$uploadFileButton.setAttribute("aria-disabled", true)
+    this.$uploadFileButton.setAttribute('aria-disabled', true)
     this.$uploadFileInformation.innerHTML = UPLOAD_FILES_DISABLED_TEXT
   }
 }
@@ -91,14 +90,13 @@ MultipleFileUpload.prototype.disableButtonOnNoFilesSelected = function (event) {
  * Initialise an event listener for onchange on the element
  */
 MultipleFileUpload.prototype.init = function () {
-
-  if(this.$uploadFileInformation !== null){
+  this.$module.addEventListener('change', this.validateFileSize.bind(this))
+  if (this.$uploadFileInformation !== null) {
     this.$uploadFileButton.disabled = true
-    this.$uploadFileButton.setAttribute("aria-disabled", true);
+    this.$uploadFileButton.setAttribute('aria-disabled', true)
     this.$uploadFileInformation.innerHTML = UPLOAD_FILES_DISABLED_TEXT
     this.$module.addEventListener('change', this.disableButtonOnNoFilesSelected.bind(this))
   }
-  this.$module.addEventListener('change', this.validateFileSize.bind(this))
 }
 
 export default MultipleFileUpload
