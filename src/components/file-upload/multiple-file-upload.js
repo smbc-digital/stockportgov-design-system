@@ -4,6 +4,8 @@ import 'govuk-frontend/govuk/vendor/polyfills/Function/prototype/bind'
 var INPUT_FILE_ERROR_CLASS = 'smbc-input--file-error'
 var FORM_GROUP_ERROR_CLASS = 'govuk-form-group--error'
 var INPUT_ERROR_CLASS = 'govuk-input--error'
+var UPLOAD_FILES_DISABLED_TEXT = 'Upload button is currently disabled'
+var UPLOAD_FILES_ENABLED_TEXT = 'Upload button is currently enabled'
 
 function MultipleFileUpload ($module) {
   this.$module = $module
@@ -77,11 +79,11 @@ MultipleFileUpload.prototype.disableButtonOnNoFilesSelected = function (event) {
   if(event.target.files.length > 0 ){
     this.$uploadFileButton.disabled = false
     this.$uploadFileButton.setAttribute("aria-disabled", false)
-    this.$uploadFileInformation.innerHTML = "Upload button is currently enabled"
+    this.$uploadFileInformation.innerHTML = UPLOAD_FILES_ENABLED_TEXT
   } else {
     this.$uploadFileButton.disabled = true
     this.$uploadFileButton.setAttribute("aria-disabled", true)
-    this.$uploadFileInformation.innerHTML = "Upload button is currently disabled"
+    this.$uploadFileInformation.innerHTML = UPLOAD_FILES_DISABLED_TEXT
   }
 }
 
@@ -89,11 +91,14 @@ MultipleFileUpload.prototype.disableButtonOnNoFilesSelected = function (event) {
  * Initialise an event listener for onchange on the element
  */
 MultipleFileUpload.prototype.init = function () {
-  this.$uploadFileButton.disabled = true
-  this.$uploadFileButton.setAttribute("aria-disabled", true);
-  this.$uploadFileInformation.innerHTML = "Upload button is currently disabled"
+
+  if(this.$uploadFileInformation !== null){
+    this.$uploadFileButton.disabled = true
+    this.$uploadFileButton.setAttribute("aria-disabled", true);
+    this.$uploadFileInformation.innerHTML = UPLOAD_FILES_DISABLED_TEXT
+    this.$module.addEventListener('change', this.disableButtonOnNoFilesSelected.bind(this))
+  }
   this.$module.addEventListener('change', this.validateFileSize.bind(this))
-  this.$module.addEventListener('change', this.disableButtonOnNoFilesSelected.bind(this))
 }
 
 export default MultipleFileUpload
