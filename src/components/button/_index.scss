@@ -15,4 +15,11 @@
     color: govuk-colour("blue");
     background-color: transparent;
   }
+
+  &:focus:not(:active):not(:hover) {
+    color: govuk-colour("black");
+    background-color: govuk-colour("yellow");
+    box-shadow: 0 -2px govuk-colour("yellow"), 0 4px govuk-colour("black");
+    text-decoration: none;
+  }
 }
