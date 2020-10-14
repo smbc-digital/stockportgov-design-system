@@ -2,8 +2,8 @@ import 'govuk-frontend/govuk/vendor/polyfills/Event' // addEventListener and eve
 import 'govuk-frontend/govuk/vendor/polyfills/Function/prototype/bind'
 
 var INPUT_FILE_ERROR_CLASS = 'smbc-input--file-error'
-var FORM_GROUP_ERROR_CLASS = 'govuk-form-group--error'
 var INPUT_ERROR_CLASS = 'govuk-input--error'
+var FORM_GROUP_ERROR_CLASS = 'govuk-form-group--error'
 var UPLOAD_FILES_DISABLED_TEXT = 'Upload button is currently disabled'
 var UPLOAD_FILES_ENABLED_TEXT = 'Upload button is currently enabled'
 
@@ -44,6 +44,8 @@ MultipleFileUpload.prototype.validateFileSize = function (event) {
       }
       allValid = false
       this.$formGroup.classList.add(FORM_GROUP_ERROR_CLASS)
+      this.$module.classList.add(INPUT_ERROR_CLASS)
+      this.$module.classList.add(INPUT_FILE_ERROR_CLASS)
     }
   }
 
