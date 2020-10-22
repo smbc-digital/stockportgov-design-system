@@ -2,6 +2,7 @@ import { nodeListForEach } from './common'
 import Button from './components/button/button'
 import FileUpload from './components/file-upload/file-upload'
 import MultipleFileUpload from './components/file-upload/multiple-file-upload'
+import Recaptcha from './components/recaptcha/recaptcha'
 
 function initAll (options) {
   // Set the options to an empty object by default if no options are passed.
@@ -25,11 +26,17 @@ function initAll (options) {
   nodeListForEach($multipleFileUploads, function ($multipleFileUpload) {
     new MultipleFileUpload($multipleFileUpload).init()
   })
+
+  var $recaptchas = scope.querySelectorAll('[data-module="smbc-recaptcha"]')
+  nodeListForEach($recaptchas, function ($recaptcha) {
+    new Recaptcha($recaptcha).init()
+  })
 }
 
 export {
   initAll,
   Button,
   FileUpload,
-  MultipleFileUpload
+  MultipleFileUpload,
+  Recaptcha
 }
