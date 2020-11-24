@@ -1,0 +1,44 @@
+.smbc-date-selected{
+  width: 48px;
+  height: 48px;
+  color:  #ffffff;
+  font-size: 18;
+  background-color:  #207EAB;
+
+  &:hover {
+    color: #0B0C0C;
+  }
+
+  @include govuk-media-query($from: mobile) {
+    font: 16px;
+  }
+}
+
+.smbc-date-deselected{
+  width: 48px;
+  height: 48px;
+  color:  #0B0C0C;
+  font-size: 18;
+  background-color:  #207EAB;
+
+  &:hover {
+    color: #0B0C0C;
+  }
+  
+  @include govuk-media-query($from: mobile) {
+    font: 16px;
+  }
+}
+
+.smbc-date-disabled{
+  width: 48px;
+  height: 48px;
+  color:   #EBEBEB;
+  font-size: 18;
+  background-color:   #BCBCBC;
+}
+
+.smbc-chevron{
+    width: 48px;
+    height: 48px;
+  }
