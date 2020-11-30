@@ -2,16 +2,13 @@
 @import "../../helpers/all";
 
 .smbc-table {
-  width: 100%;
-  max-width: 300px;
   border-spacing: 0;
   border-collapse: collapse;
   border: 2px solid govuk-colour("smbc-black");
 }
 
-.smbc-tr {
-  height: 40px;
-  text-align: center;
+.smbc-calendar-border {
+  border: 2px solid govuk-colour("smbc-black");
 }
 
 .smbc-calendar-month-year {
@@ -22,73 +19,101 @@
   }
 }
 
+.smbc-table-body input[type="radio"] {
+  position: fixed;
+  width: 0;
+  opacity: 0;
+}
+
+.smbc-table-body label {
+  display: flex;
+  width: 51px;
+  height: 48px;
+  max-height: 48px;
+  // border: 1px solid govuk-colour("white");
+  color: govuk-colour("smbc-black");
+  font-size: 18px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  @include govuk-media-query($from: mobile) {
+    font: 16px;
+  }
+}
+
+.smbc-table-body label:hover {
+  color:  govuk-colour("smbc-black");
+  background-color: govuk-colour("smbc-pale-blue");
+  cursor: pointer;
+}
+
+.smbc-table-body input[type="radio"]:checked + label {
+  color:  govuk-colour("white");
+  background-color: govuk-colour("smbc-blue");
+}
+
+.smbc-calendar-date {
+  margin: 0;
+}
+
 .smbc-calendar-weekdays {
   width: 48px;
   height: 48px;
+  max-height: 48px;
+  border: 1px solid govuk-colour("white");
   color: govuk-colour("smbc-black");
-  background: lighten($govuk-calendar-weekdays-colour, 25%);
-  size: 18px;
-
-  @include govuk-media-query($from: mobile) {
-    font: 16px;
-  }
-}
-
-.smbc-calendar-border {
-  width: 2px;
-  color: govuk-colour("smbc-black");
-}
-
-.smbc-date-selected {
-  width: 48px;
-  height: 48px;
-  color:  govuk-colour("white");
-  background-color: govuk-colour("smbc-blue");
-  font-size: 18;
-
-  @include govuk-media-query($from: mobile) {
-    font: 16px;
-  }
-}
-
-.smbc-date-deselected {
-  width: 48px;
-  height: 48px;
-  color: govuk-colour("smbc-black");
-  background-color: govuk-colour("white");
+  background-color: $govuk-calendar-weekdays-colour;
   font-size: 18px;
-  
-  @include govuk-media-query($from: mobile) {
-    font: 16px;
-  }
-}
-
-.smbc-date-deselected:hover {
-  width: 48px;
-  height: 48px;
-  color:  govuk-colour("smbc-black");
-  background-color: lighten(govuk-colour("smbc-blue"), 20%);
-  font-size: 18;
+  text-align: center;
 
   @include govuk-media-query($from: mobile) {
     font: 16px;
   }
 }
 
-.smbc-date-disabled {
-  width: 48px;
-  height: 48px;
+.smbc-table-body .smbc-date-disabled {
   color: govuk-colour("mid-grey");
   background: govuk-colour("light-grey");
-  font-size: 18;
+}
 
-  @include govuk-media-query($from: mobile) {
-    font: 16px;
+.smbc-table-body .smbc-date-disabled:hover {
+  color: govuk-colour("mid-grey");
+  background: govuk-colour("light-grey");
+  cursor: default;
+}
+
+.smbc-chevron-button {
+  width: 70px;
+  height: 55px;
+  border: 0;
+  color: govuk-colour("smbc-black");
+  background-color: govuk-colour("white");
+}
+
+.smbc-chevron-button:hover {
+  cursor: pointer;
+}
+
+.smbc-chevron-button__left {
+  float: left;
+  text-align: left;
+
+  .smbc-calendar-chevron__left {
+    padding-left: 20%;
+  }
+}
+
+.smbc-chevron-button__right {
+  float: right;
+  text-align: right;
+
+  .smbc-calendar-chevron__right {
+    padding-right: 20%;
   }
 }
 
 .smbc-calendar-chevron {
-  width: 48px;
-  height: 48px;
   color: govuk-colour("smbc-black");
+  font-size: 24px;
 }
