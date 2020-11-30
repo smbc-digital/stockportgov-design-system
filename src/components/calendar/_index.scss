@@ -1,44 +1,94 @@
-.smbc-date-selected{
+@import "../../settings/all";
+@import "../../helpers/all";
+
+.smbc-table {
+  width: 100%;
+  max-width: 300px;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 2px solid govuk-colour("smbc-black");
+}
+
+.smbc-tr {
+  height: 40px;
+  text-align: center;
+}
+
+.smbc-calendar-month-year {
+  color: govuk-colour("smbc-black");
+
+  @include govuk-media-query($from: mobile) {
+    font: 20px;
+  }
+}
+
+.smbc-calendar-weekdays {
   width: 48px;
   height: 48px;
-  color:  #ffffff;
-  font-size: 18;
-  background-color:  #207EAB;
-
-  &:hover {
-    color: #0B0C0C;
-  }
+  color: govuk-colour("smbc-black");
+  background: lighten($govuk-calendar-weekdays-colour, 25%);
+  size: 18px;
 
   @include govuk-media-query($from: mobile) {
     font: 16px;
   }
 }
 
-.smbc-date-deselected{
+.smbc-calendar-border {
+  width: 2px;
+  color: govuk-colour("smbc-black");
+}
+
+.smbc-date-selected {
   width: 48px;
   height: 48px;
-  color:  #0B0C0C;
+  color:  govuk-colour("white");
+  background-color: govuk-colour("smbc-blue");
   font-size: 18;
-  background-color:  #207EAB;
 
-  &:hover {
-    color: #0B0C0C;
+  @include govuk-media-query($from: mobile) {
+    font: 16px;
   }
+}
+
+.smbc-date-deselected {
+  width: 48px;
+  height: 48px;
+  color: govuk-colour("smbc-black");
+  background-color: govuk-colour("white");
+  font-size: 18px;
   
   @include govuk-media-query($from: mobile) {
     font: 16px;
   }
 }
 
-.smbc-date-disabled{
+.smbc-date-deselected:hover {
   width: 48px;
   height: 48px;
-  color:   #EBEBEB;
+  color:  govuk-colour("smbc-black");
+  background-color: lighten(govuk-colour("smbc-blue"), 20%);
   font-size: 18;
-  background-color:   #BCBCBC;
+
+  @include govuk-media-query($from: mobile) {
+    font: 16px;
+  }
 }
 
-.smbc-chevron{
-    width: 48px;
-    height: 48px;
+.smbc-date-disabled {
+  width: 48px;
+  height: 48px;
+  color: govuk-colour("mid-grey");
+  background: govuk-colour("light-grey");
+  font-size: 18;
+
+  @include govuk-media-query($from: mobile) {
+    font: 16px;
   }
+}
+
+.smbc-calendar-chevron {
+  width: 48px;
+  height: 48px;
+  color: govuk-colour("smbc-black");
+}
