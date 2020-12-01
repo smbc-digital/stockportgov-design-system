@@ -25,12 +25,12 @@
   opacity: 0;
 }
 
-.smbc-table-body label {
+.smbc-table-body label, 
+.smbc-table-body span {
   display: flex;
   width: 51px;
   height: 48px;
   max-height: 48px;
-  // border: 1px solid govuk-colour("white");
   color: govuk-colour("smbc-black");
   font-size: 18px;
   text-align: center;
