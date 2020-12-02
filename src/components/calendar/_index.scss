@@ -1,7 +1,7 @@
 @import "../../settings/all";
 @import "../../helpers/all";
 
-.smbc-table {
+.smbc-calendar {
   table-layout: fixed;
   border-spacing: 0;
   border-collapse: collapse;
@@ -11,11 +11,48 @@
   border: 2px solid govuk-colour("smbc-black");
 }
 
-.smbc-calendar-month-year {
-  color: govuk-colour("smbc-black");
-
+.smbc-calendar p {
   @include govuk-media-query($from: mobile) {
     font: 20px;
+  }
+}
+
+.smbc-chevron-button {
+  width: 70px;
+  height: 55px;
+  border: 0;
+  color: govuk-colour("smbc-black");
+  background-color: govuk-colour("white");
+
+  &:focus:not(:active):not(:hover) {
+    outline: 2px solid govuk-colour("yellow");
+  }
+
+  span {
+    color: govuk-colour("smbc-black");
+    font-size: 24px;
+  }
+}
+
+.smbc-chevron-button:hover {
+  cursor: pointer;
+}
+
+.smbc-chevron-button__left {
+  float: left;
+  text-align: left;
+
+  span {
+    padding-left: 20%;
+  }
+}
+
+.smbc-chevron-button__right {
+  float: right;
+  text-align: right;
+
+  span {
+    padding-right: 20%;
   }
 }
 
@@ -24,9 +61,15 @@
 }
 
 .smbc-table-body input[type="radio"] {
-  position: fixed;
+  position: absolute;
   width: 0;
   opacity: 0;
+
+  &:focus:not(:active):not(:hover) + label {
+    width: 46px;
+    height: 46px;
+    outline: 2px solid govuk-colour("yellow");
+  }
 }
 
 .smbc-table-body label,
@@ -35,18 +78,13 @@
   width: 48px;
   height: 48px;
   max-height: 48px;
+  margin-right: auto;
+  margin-left: auto;
   color: govuk-colour("smbc-black");
   font-size: 18px;
   text-align: center;
   justify-content: center;
   align-items: center;
-
-  &:focus:not(:active):not(:hover) {
-    color: govuk-colour("black");
-    background-color: govuk-colour("yellow");
-    box-shadow: 0 -2px govuk-colour("yellow"), 0 4px govuk-colour("black");
-    text-decoration: none;
-  }
 
   @include govuk-media-query($from: mobile) {
     font: 16px;
@@ -98,37 +136,4 @@
   cursor: default;
 }
 
-.smbc-chevron-button {
-  width: 70px;
-  height: 55px;
-  border: 0;
-  color: govuk-colour("smbc-black");
-  background-color: govuk-colour("white");
-}
 
-.smbc-chevron-button:hover {
-  cursor: pointer;
-}
-
-.smbc-chevron-button__left {
-  float: left;
-  text-align: left;
-
-  .smbc-calendar-chevron__left {
-    padding-left: 20%;
-  }
-}
-
-.smbc-chevron-button__right {
-  float: right;
-  text-align: right;
-
-  .smbc-calendar-chevron__right {
-    padding-right: 20%;
-  }
-}
-
-.smbc-calendar-chevron {
-  color: govuk-colour("smbc-black");
-  font-size: 24px;
-}
