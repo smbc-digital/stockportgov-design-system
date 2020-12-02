@@ -28,14 +28,14 @@
     outline: 2px solid govuk-colour("yellow");
   }
 
+  &:hover {
+    cursor: pointer;
+  }
+
   span {
     color: govuk-colour("smbc-black");
     font-size: 24px;
   }
-}
-
-.smbc-chevron-button:hover {
-  cursor: pointer;
 }
 
 .smbc-chevron-button__left {
@@ -56,11 +56,11 @@
   }
 }
 
-.smbc-table-body {
+.smbc-calendar-body {
   border: 2px solid govuk-colour("smbc-black");
 }
 
-.smbc-table-body input[type="radio"] {
+.smbc-calendar-body input[type="radio"] {
   position: absolute;
   width: 0;
   opacity: 0;
@@ -72,8 +72,8 @@
   }
 }
 
-.smbc-table-body label,
-.smbc-table-body span {
+.smbc-calendar-body label,
+.smbc-calendar-body span {
   display: flex;
   width: 48px;
   height: 48px;
@@ -91,13 +91,13 @@
   }
 }
 
-.smbc-table-body label:hover {
+.smbc-calendar-body label:hover {
   color:  govuk-colour("smbc-black");
   background-color: govuk-colour("smbc-pale-blue");
   cursor: pointer;
 }
 
-.smbc-table-body td input[type="radio"]:checked + label {
+.smbc-calendar-body td input[type="radio"]:checked + label {
   color:  govuk-colour("white");
   background-color: govuk-colour("smbc-blue");
 }
@@ -121,7 +121,7 @@
   background-color: $govuk-calendar-weekdays-colour;
 }
 
-.smbc-table-body .smbc-date-disabled {
+.smbc-date-disabled {
   color: govuk-colour("mid-grey");
   background: govuk-colour("light-grey");
 
@@ -130,7 +130,7 @@
   }
 }
 
-.smbc-table-body .smbc-date-disabled:hover {
+.smbc-date-disabled:hover {
   color: govuk-colour("mid-grey");
   background: govuk-colour("light-grey");
   cursor: default;
