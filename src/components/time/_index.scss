@@ -11,11 +11,10 @@
 .smbc-tab {
   width: 150px;
   height: 5px;
-  padding-bottom: 32px;
   border-bottom: 4px solid govuk-colour("mid-grey");
   color: govuk-colour("smbc-black");
   font-size: 24px;
-  text-align: center; 
+  text-align: center;
   cursor: pointer;
 
   @include govuk-media-query($from: mobile) {
@@ -24,12 +23,10 @@
 }
 
 .smbc-tab__right {
-  margin-right: 10px;
   float: left;
 }
 
 .smbc-tab__left {
-  margin-left: 10px;
   float: right;
 }
 
@@ -51,7 +48,6 @@
 .smbc-time-selection {
   display: flex;
   max-width: 344px;
-  padding-bottom: 10px;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -61,7 +57,6 @@
   display: flex;
   width: 88px;
   height: 45px;
-  margin-top: 10px;
   border: 2px solid;
   border-radius: 2;
   border-color: govuk-colour("smbc-blue");
@@ -89,11 +84,6 @@
   float: right;
 }
 
-.smbc-time-deselected {
-  color: govuk-colour("smbc-black");
-  background-color: govuk-colour("white");
-}
-
 .smbc-time-selection input[type="radio"]:checked + label {
   color: govuk-colour("white");
   background-color: govuk-colour("smbc-blue");
@@ -101,12 +91,6 @@
 
 .smbc-tab:hover {
   border-bottom: 5px solid govuk-colour("smbc-blue");
-}
-
-.smbc-time-label {
-  width: 88px;
-  height: 45px;
-  cursor: pointer;
 }
 
 .smbc-time-input:checked + label {
