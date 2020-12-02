@@ -41,6 +41,13 @@
   justify-content: center;
   align-items: center;
 
+  &:focus:not(:active):not(:hover) {
+    color: govuk-colour("black");
+    background-color: govuk-colour("yellow");
+    box-shadow: 0 -2px govuk-colour("yellow"), 0 4px govuk-colour("black");
+    text-decoration: none;
+  }
+
   @include govuk-media-query($from: mobile) {
     font: 16px;
   }
