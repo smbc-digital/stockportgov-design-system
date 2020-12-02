@@ -39,7 +39,11 @@
   position: fixed;
   width: 0;
   opacity: 0;
-}
+
+  &:focus:not(:active):not(:hover) + label {
+    outline: 2px solid govuk-colour("yellow");
+  }
+  }
 
 .smbc-time-of-day input[type="radio"]:checked + label {
   border-bottom: 5px solid govuk-colour("smbc-blue");
