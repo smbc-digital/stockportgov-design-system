@@ -8,11 +8,14 @@
   flex-wrap: wrap;
 }
 
-.smbc-tab {  
+.smbc-tab {
+  width: 150px;
+  height: 5px;
   padding-bottom: 32px;
   border-bottom: 4px solid govuk-colour("mid-grey");
   color: govuk-colour("smbc-black");
   font-size: 24px;
+  text-align: center; 
   cursor: pointer;
 
   @include govuk-media-query($from: mobile) {
@@ -34,33 +37,20 @@
   border-bottom: 5px solid govuk-colour("smbc-blue");
 }
 
-.smbc-tab-input {
-  visibility: hidden;
+.smbc-time-of-day input[type="radio"],
+.smbc-time-selection input[type="radio"] {
+  position: fixed;
+  width: 0;
+  opacity: 0;
 }
 
-.smbc-tab-label {
-  width: 150px;
-  height: 5px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.smbc-tab-input:checked + label {
-  background: govuk-colour("white");
-}
-
-.smbc-tab-selected {
+.smbc-time-of-day input[type="radio"]:checked + label {
   border-bottom: 5px solid govuk-colour("smbc-blue");
-}
-
-.smbc-tab-deselected {
-  border-bottom: 5px solid govuk-colour("mid-grey");
 }
 
 .smbc-time-selection {
   display: flex;
-  max-width: 380px;
-  margin-top: 20px;
+  max-width: 344px;
   padding-bottom: 10px;
   flex-direction: row;
   flex-wrap: wrap;
@@ -86,22 +76,31 @@
   }
 }
 
+.smbc-time-column-1 {
+  float: left;
+}
+
+.smbc-time-column-2 {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.smbc-time-column-3 {
+  float: right;
+}
+
 .smbc-time-deselected {
   color: govuk-colour("smbc-black");
   background-color: govuk-colour("white");
 }
 
-.smbc-time-selected {
+.smbc-time-selection input[type="radio"]:checked + label {
   color: govuk-colour("white");
   background-color: govuk-colour("smbc-blue");
 }
 
 .smbc-tab:hover {
   border-bottom: 5px solid govuk-colour("smbc-blue");
-}
-
-.smbc-time-input {
-  visibility: hidden;
 }
 
 .smbc-time-label {
