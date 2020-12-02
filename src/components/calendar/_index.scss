@@ -66,9 +66,8 @@
   opacity: 0;
 
   &:focus:not(:active):not(:hover) + label {
-    width: 46px;
-    height: 46px;
     outline: 2px solid govuk-colour("yellow");
+    outline-offset: -2px;
   }
 }
 

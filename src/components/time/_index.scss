@@ -62,7 +62,7 @@
   width: 88px;
   height: 45px;
   border: 2px solid;
-  border-radius: 2;
+  border-radius: 2px;
   border-color: govuk-colour("smbc-blue");
   font-size: 18px;
   text-align: center;
@@ -75,16 +75,16 @@
   }
 }
 
-.smbc-time-column-1 {
+.smbc-time__1 {
   float: left;
 }
 
-.smbc-time-column-2 {
+.smbc-time__2 {
   margin-right: auto;
   margin-left: auto;
 }
 
-.smbc-time-column-3 {
+.smbc-time__3 {
   float: right;
 }
 
