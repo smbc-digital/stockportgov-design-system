@@ -1,49 +1,115 @@
-.smbc-tab {
-  width: 150px;
-  height: 5px;
+@import "../../settings/all";
+@import "../../helpers/all";
+
+.smbc-time-of-day {
+  display: flex;
+  max-width: 380px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.smbc-tab {  
+  padding-bottom: 32px;
+  border-bottom: 4px solid govuk-colour("mid-grey");
   color: govuk-colour("smbc-black");
-  font-size: 24;
+  font-size: 24px;
+  cursor: pointer;
 
   @include govuk-media-query($from: mobile) {
-    font: 20px;
+    font-size: 20px;
   }
 }
 
-.smbc-tab-selected {
-  background-color: govuk-colour("smbc-blue");
+.smbc-tab__right {
+  margin-right: 10px;
+  float: left;
 }
 
-.smbc-tab-deselected {
-  background-color: govuk-colour("mid-grey");
+.smbc-tab__left {
+  margin-left: 10px;
+  float: right;
 }
 
 .smbc-tab:hover {
-  background-color: govuk-colour("smbc-blue");
+  border-bottom: 5px solid govuk-colour("smbc-blue");
 }
 
-.smbc-time-button-deselected {
+.smbc-tab-input {
+  visibility: hidden;
+}
+
+.smbc-tab-label {
+  width: 150px;
+  height: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.smbc-tab-input:checked + label {
+  background: govuk-colour("white");
+}
+
+.smbc-tab-selected {
+  border-bottom: 5px solid govuk-colour("smbc-blue");
+}
+
+.smbc-tab-deselected {
+  border-bottom: 5px solid govuk-colour("mid-grey");
+}
+
+.smbc-time-selection {
+  display: flex;
+  max-width: 380px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.smbc-time {
+  display: flex;
   width: 88px;
   height: 45px;
-  border: 2px;
+  margin-top: 10px;
+  border: 2px solid;
   border-radius: 2;
-  color: govuk-colour("smbc-blue");
-  font-size: 18;
+  border-color: govuk-colour("smbc-blue");
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
 
   @include govuk-media-query($from: mobile) {
-    font: 18px;
+    font-size: 16px;
   }
 }
 
-.smbc-time-button-selected {
-  width: 88px;
-  height: 45px;
-  border: 2px;
-  border-radius: 2;
+.smbc-time-deselected {
+  color: govuk-colour("smbc-black");
+  background-color: govuk-colour("white");
+}
+
+.smbc-time-selected {
   color: govuk-colour("white");
   background-color: govuk-colour("smbc-blue");
-  font-size: 18;
+}
 
-  @include govuk-media-query($from: mobile) {
-    font: 18px;
-  }
+.smbc-tab:hover {
+  border-bottom: 5px solid govuk-colour("smbc-blue");
+}
+
+.smbc-time-input {
+  visibility: hidden;
+}
+
+.smbc-time-label {
+  width: 88px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.smbc-time-input:checked + label {
+  background: govuk-colour("white");
 }
