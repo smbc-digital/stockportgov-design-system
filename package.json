@@ -124,5 +124,8 @@
     ]
   },
   "author": "StockportGovUK",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1"
+  }
 }
