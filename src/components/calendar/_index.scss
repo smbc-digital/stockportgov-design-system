@@ -133,7 +133,7 @@
   width: 0;
   opacity: 0;
 
-  &:focus:not(:active) + label {
+  &:focus:not(:active):not(:hover) + label {
     outline: 2px solid govuk-colour("yellow");
     outline-offset: -2px;
   }
