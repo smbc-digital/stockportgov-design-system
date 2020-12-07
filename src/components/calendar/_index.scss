@@ -1,14 +1,42 @@
 @import "../../settings/all";
 @import "../../helpers/all";
 
+.smbc-calendar-border {
+  width: 343px;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 2px solid govuk-colour("smbc-black");
+}
+
+.smbc-calendar-header {
+  display: flex;
+  width: 339px;
+  height: 53px;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 2px solid govuk-colour("white");
+}
+
+.smbc-calendar-header__text {
+  display: flex;
+  width: 190px;
+  justify-content: center;
+  align-items: center;
+}
+
+.smbc-calendar-border__header {
+  height: 55px;
+}
+
+.smbc-calendar-border__body {
+  height: 343px;
+}
+
 .smbc-calendar {
   table-layout: fixed;
   border-spacing: 0;
   border-collapse: collapse;
-}
-
-.smbc-calendar-border {
-  border: 2px solid govuk-colour("smbc-black");
+  border: 1px solid govuk-colour("white");
 }
 
 .smbc-calendar p {
@@ -54,10 +82,6 @@
   span {
     padding-right: 20%;
   }
-}
-
-.smbc-calendar-body {
-  border: 2px solid govuk-colour("smbc-black");
 }
 
 .smbc-calendar-body input[type="radio"] {
