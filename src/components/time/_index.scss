@@ -6,12 +6,16 @@
   max-width: 344px;
   flex-direction: row;
   flex-wrap: wrap;
+
+  div {
+    max-width: 50%;
+  }
 }
 
 .smbc-tab {
   width: 150px;
   height: 5px;
-  border-bottom: 4px solid govuk-colour("mid-grey");
+  border-bottom: 5px solid govuk-colour("mid-grey");
   color: govuk-colour("smbc-black");
   font-size: 24px;
   text-align: center;
@@ -55,6 +59,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+
+  div {
+    max-width: 33%;
+  }
 }
 
 .smbc-time {
