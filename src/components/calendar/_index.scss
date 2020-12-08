@@ -1,22 +1,22 @@
 @import "../../settings/all";
 @import "../../helpers/all";
 
-.smbc-calendar-border {
+.smbc-calendar {
   width: 343px;
   border-spacing: 0;
   border-collapse: collapse;
   border: 2px solid govuk-colour("smbc-black");
 }
 
-.smbc-calendar-border__header {
+.smbc-calendar--header-border {
   height: 55px;
 }
 
-.smbc-calendar-border__body {
+.smbc-calendar--body-border {
   height: 343px;
 }
 
-.smbc-calendar-header {
+.smbc-calendar__header {
   display: flex;
   width: 339px;
   height: 53px;
@@ -25,159 +25,178 @@
   align-items: center;
 }
 
-.smbc-calendar-header-text {
+.smbc-calendar__header-text {
   display: flex;
   width: 198px;
+  margin: govuk-spacing(0);
   font-size: 20px;
+  font-weight: 800;
   text-align: center;
   justify-content: center;
   align-items: center;
+}
 
-  @include govuk-media-query($from: desktop) {
+@include govuk-media-query($from: desktop) {
+  .smbc-calendar__header-text {
     font-size: 24px;
   }
 }
 
-.smbc-chevron-button {
+.smbc-calendar__chevron-button {
   width: 70px;
   height: 55px;
+  padding: govuk-spacing(0);
   border: 0;
   color: govuk-colour("smbc-black");
   background-color: govuk-colour("white");
+}
 
-  &:focus:not(:active):not(:hover) {
-    outline: 2px solid govuk-colour("yellow");
-  }
+.smbc-calendar__chevron-button:focus:not(:active):not(:hover) {
+  outline: 2px solid govuk-colour("yellow");
+}
 
-  &:hover {
-    cursor: pointer;
+.smbc-calendar__chevron-button:hover {
+  cursor: pointer;
 
-    .smbc-chevron-hover {
-      background-color: govuk-colour("light-grey");
-    }
+  .smbc-calendar__chevron-hover {
+    background-color: govuk-colour("light-grey");
   }
 }
 
-.smbc-chevron-hover {
+.smbc-calendar__chevron-hover {
   display: flex;
   width: 50px;
   height: 50px;
+  padding: govuk-spacing(0);
   justify-content: center;
   align-items: center;
 }
 
-.smbc-chevron-button__left {
+.smbc-calendar__chevron-button--left {
   float: left;
   text-align: left;
-
-  .smbc-chevron::before {
-    @extend %fa-icon; // sass-lint:disable-line placeholder-name-format
-    @extend .fas;
-
-    content: $fas-chevron-left;
-    font-size: 16px;
-  }
 }
 
-.smbc-chevron-button__right {
+.smbc-calendar__chevron-icon {
+  font-size: 16px;
+}
+
+.smbc-calendar__chevron-icon--left::before {
+  @extend %fa-icon; // sass-lint:disable-line placeholder-name-format
+  @extend .fas;
+
+  content: $fas-chevron-left;
+}
+
+.smbc-calendar__chevron-button--right {
   float: right;
   text-align: right;
-
-  .smbc-chevron-hover {
-    float: right;
-  }
-
-  .smbc-chevron::before {
-    @extend %fa-icon; // sass-lint:disable-line placeholder-name-format
-    @extend .fas;
-
-    content: $fas-chevron-right;
-    font-size: 16px;
-  }
 }
 
-.smbc-calendar {
+.smbc-calendar__chevron-hover--right {
+  float: right;
+}
+
+.smbc-calendar__chevron-icon--right::before {
+  @extend %fa-icon; // sass-lint:disable-line placeholder-name-format
+  @extend .fas;
+
+  content: $fas-chevron-right;
+}
+
+.smbc-calendar__body {
   table-layout: fixed;
   border-spacing: 0;
   border-collapse: collapse;
   border: 1px solid govuk-colour("white");
 }
 
-.smbc-calendar-cell {
+.smbc-calendar__cell {
   width: 48px;
   height: 48px;
   max-height: 48px;
+  padding: govuk-spacing(0);
   border: 1px solid govuk-colour("white");
   font-size: 16px;
   text-align: center;
+}
 
-  @include govuk-media-query($from: desktop) {
+@include govuk-media-query($from: desktop) {
+  .smbc-calendar__cell {
     font-size: 18px;
   }
 }
 
-.smbc-calendar-weekdays {
+.smbc-calendar__cell--weekdays {
   background-color: $govuk-calendar-weekdays-colour;
+}
 
-  p {
-    font-size: 16px;
+.smbc-calendar__weekdays-text {
+  @extend .smbc-body;
+  
+  margin: govuk-spacing(0);
+  font-size: 16px;
+  font-weight: 800;
+}
 
-    @include govuk-media-query($from: desktop) {
-      font-size: 18px;
-    }
+@include govuk-media-query($from: desktop) {
+  .smbc-calendar__weekdays-text {
+    font-size: 18px;
   }
 }
 
-.smbc-calendar input[type="radio"] {
+.smbc-calendar__cell-input {
   position: absolute;
   width: 0;
   opacity: 0;
-
-  &:focus:not(:active):not(:hover) + label {
-    outline: 2px solid govuk-colour("yellow");
-    outline-offset: -2px;
-  }
 }
 
-.smbc-calendar label,
-.smbc-calendar span {
+.smbc-calendar__cell-input:focus:not(:active):not(:hover) + label {
+  outline: 2px solid govuk-colour("yellow");
+  outline-offset: -2px;
+}
+
+.smbc-calendar__cell-label {
+  @extend .smbc-body;
+
   display: flex;
   width: 48px;
   height: 48px;
   max-height: 48px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: govuk-spacing(0);
   color: govuk-colour("smbc-black");
   font-size: 16px;
   text-align: center;
   justify-content: center;
   align-items: center;
+}
 
-  @include govuk-media-query($from: desktop) {
+@include govuk-media-query($from: desktop) {
+  .smbc-calendar__cell-label {
     font-size: 18px;
   }
 }
 
-.smbc-calendar label:hover {
+.smbc-calendar__cell-label:hover {
   color:  govuk-colour("smbc-black");
   background-color: govuk-colour("smbc-pale-blue");
   cursor: pointer;
 }
 
-.smbc-calendar input[type="radio"]:checked + label {
+.smbc-calendar__cell-input:checked + label {
   color:  govuk-colour("white");
   background-color: govuk-colour("smbc-blue");
   font-weight: 800;
 }
 
-.smbc-date-disabled {
+.smbc-calendar__cell--disabled {
   background: govuk-colour("light-grey");
+}
 
-  &:hover {
-    cursor: default;
-  }
+.smbc-calendar__cell--disabled:hover {
+  cursor: default;
+}
 
-  span {
-    color: govuk-colour("mid-grey");
-  }
+.smbc-calendar__cell-label--disabled {
+  color: govuk-colour("mid-grey");
 }
