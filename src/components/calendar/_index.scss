@@ -47,7 +47,6 @@
   height: 55px;
   padding: govuk-spacing(0);
   border: 0;
-  color: govuk-colour("smbc-black");
   background-color: govuk-colour("white");
 }
 
@@ -63,6 +62,10 @@
   }
 }
 
+.smbc-calendar__chevron-button--disabled:hover {
+  cursor: default;
+}
+
 .smbc-calendar__chevron-hover {
   display: flex;
   width: 50px;
@@ -70,11 +73,6 @@
   padding: govuk-spacing(0);
   justify-content: center;
   align-items: center;
-}
-
-.smbc-calendar__chevron-button--left {
-  float: left;
-  text-align: left;
 }
 
 .smbc-calendar__chevron-icon {
@@ -86,11 +84,6 @@
   @extend .fas;
 
   content: $fas-chevron-left;
-}
-
-.smbc-calendar__chevron-button--right {
-  float: right;
-  text-align: right;
 }
 
 .smbc-calendar__chevron-hover--right {
@@ -114,7 +107,6 @@
 .smbc-calendar__cell {
   width: 48px;
   height: 48px;
-  max-height: 48px;
   padding: govuk-spacing(0);
   border: 1px solid govuk-colour("white");
   font-size: 16px;
@@ -162,9 +154,7 @@
   display: flex;
   width: 48px;
   height: 48px;
-  max-height: 48px;
   margin: govuk-spacing(0);
-  color: govuk-colour("smbc-black");
   font-size: 16px;
   text-align: center;
   justify-content: center;
@@ -178,7 +168,6 @@
 }
 
 .smbc-calendar__cell-label:hover {
-  color:  govuk-colour("smbc-black");
   background-color: govuk-colour("smbc-pale-blue");
   cursor: pointer;
 }
@@ -190,7 +179,7 @@
 }
 
 .smbc-calendar__cell--disabled {
-  background: govuk-colour("light-grey");
+  background-color: govuk-colour("light-grey");
 }
 
 .smbc-calendar__cell--disabled:hover {
