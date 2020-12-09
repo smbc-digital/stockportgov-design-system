@@ -1,0 +1,117 @@
+@import "../../settings/all";
+@import "../../helpers/all";
+
+.smbc-time {
+  width: 344px;
+}
+
+.smbc-time__header {
+  display: flex;
+  margin-bottom: govuk-spacing(6);
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.smbc-time__body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.smbc-time__period {
+  @extend .govuk-grid-column-one-half;
+  @extend .govuk-grid-column-one-half-from-desktop;
+
+  max-width: 50%;
+  padding: govuk-spacing(0);
+}
+
+.smbc-time__period__input {
+  position: fixed;
+  width: 0;
+  opacity: 0;
+
+  &:focus:not(:active):not(:hover) + label {
+    outline: 2px solid govuk-colour("yellow");
+  }
+
+  &:checked + label {
+    border-bottom: 5px solid govuk-colour("smbc-blue");
+  }
+}
+
+.smbc-time__period__label {
+  @extend .smbc-body;
+  @include govuk-font($size: 24);
+
+  width: 150px;
+  margin: govuk-spacing(0);
+  padding-top: govuk-spacing(2);
+  padding-bottom: govuk-spacing(2);
+  border-bottom: 5px solid govuk-colour("mid-grey");
+  font-weight: $govuk-font-weight-bold;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    border-bottom: 5px solid govuk-colour("smbc-blue");
+  }
+}
+
+.smbc-time__period__label--left {
+  float: left;
+}
+
+.smbc-time__period__label--right {
+  float: right;
+}
+
+.smbc-time__time {
+  min-width: 33%;
+  padding-bottom: govuk-spacing(4);
+}
+
+.smbc-time__time__input {
+  position: fixed;
+  width: 0;
+  opacity: 0;
+
+  &:focus:not(:active):not(:hover) + label {
+    outline: 2px solid govuk-colour("yellow");
+  }
+
+  &:checked + label {
+    color: govuk-colour("white");
+    background-color: govuk-colour("smbc-blue");
+  }
+}
+
+.smbc-time__time__label {
+  @extend .smbc-body;
+  @include govuk-font($size: 19);
+
+  display: flex;
+  width: 88px;
+  height: 45px;
+  margin: govuk-spacing(0);
+  border: 2px solid govuk-colour("smbc-blue");
+  border-radius: 2px;
+  font-weight: $govuk-font-weight-bold;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.smbc-time__time__label--left {
+  float: left;
+}
+
+.smbc-time__time__label--centre {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.smbc-time__time__label--right {
+  float: right;
+}

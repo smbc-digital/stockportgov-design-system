@@ -10,3 +10,8 @@ $govuk-is-ie8: false !default;
 @import "./core/all";
 @import "./components/all";
 @import "./overrides/all";
+
+// FontAwesome Import
+@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/icons";
