@@ -100,7 +100,7 @@
 .smbc-calendar__weekdays {
   @extend .smbc-calendar__cell;
 
-  background-color: $govuk-calendar-weekdays-colour;
+  background-color: $smbc-calendar-weekdays-colour;
 }
 
 .smbc-calendar__weekdays__text {
