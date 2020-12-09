@@ -31,6 +31,10 @@
   border: 0;
   background-color: govuk-colour("white");
 
+  @include govuk-media-query($from: desktop) {
+    width: 50px;
+  }
+
   &:hover {
     background-color: govuk-colour("light-grey");
     cursor: pointer;
@@ -43,12 +47,6 @@
 
   &:focus:not(:active) {
     outline: 0;
-  }
-}
-
-@include govuk-media-query($from: desktop) {
-  .smbc-calendar__header__button {
-    width: 50px;
   }
 }
 
