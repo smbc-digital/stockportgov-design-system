@@ -2,14 +2,20 @@
 @import "../../helpers/all";
 
 .smbc-time {
+  width: 344px;
+}
+
+.smbc-time__header {
   display: flex;
-  max-width: 344px;
-  padding-top: govuk-spacing(6);
+  margin-bottom: govuk-spacing(6);
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.smbc-time--body {
+.smbc-time__body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -21,55 +27,69 @@
   padding: govuk-spacing(0);
 }
 
+.smbc-time__period__input {
+  position: fixed;
+  width: 0;
+  opacity: 0;
+
+  &:focus:not(:active):not(:hover) + label {
+    outline: 2px solid govuk-colour("yellow");
+  }
+
+  &:checked + label {
+    border-bottom: 5px solid govuk-colour("smbc-blue");
+  }
+}
+
+.smbc-time__period__label {
+  @extend .smbc-body;
+  @include govuk-font($size: 24);
+
+  width: 150px;
+  margin: govuk-spacing(0);
+  padding-top: govuk-spacing(2);
+  padding-bottom: govuk-spacing(2);
+  border-bottom: 5px solid govuk-colour("mid-grey");
+  font-weight: $govuk-font-weight-bold;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    border-bottom: 5px solid govuk-colour("smbc-blue");
+  }
+}
+
+.smbc-time__period__label--left {
+  float: left;
+}
+
+.smbc-time__period__label--right {
+  float: right;
+}
+
 .smbc-time__time {
   min-width: 33%;
   padding-bottom: govuk-spacing(4);
 }
 
-.smbc-time__input {
+.smbc-time__time__input {
   position: fixed;
   width: 0;
   opacity: 0;
-}
 
-.smbc-time__input:focus:not(:active):not(:hover) + label {
-  outline: 2px solid govuk-colour("yellow");
-}
+  &:focus:not(:active):not(:hover) + label {
+    outline: 2px solid govuk-colour("yellow");
+  }
 
-.smbc-time__period-label {
-  @extend .smbc-body;
-
-  width: 150px;
-  height: 40px;
-  margin: govuk-spacing(0);
-  border-bottom: 5px solid govuk-colour("mid-grey");
-  font-size: 20px;
-  font-weight: 800;
-  text-align: center;
-  cursor: pointer;
-}
-
-@include govuk-media-query($from: desktop) {
-  .smbc-time__period-label {
-    font-size: 24px;
+  &:checked + label {
+    color: govuk-colour("white");
+    background-color: govuk-colour("smbc-blue");
   }
 }
 
-.smbc-time__period-label--left {
-  float: left;
-}
-
-.smbc-time__period-label--right {
-  float: right;
-}
-
-.smbc-time__period-label:hover,
-.smbc-time__input--period:checked + label {
-  border-bottom: 5px solid govuk-colour("smbc-blue");
-}
-
-.smbc-time__time-label {
+.smbc-time__time__label {
   @extend .smbc-body;
+  @include govuk-font($size: 19);
 
   display: flex;
   width: 88px;
@@ -77,33 +97,21 @@
   margin: govuk-spacing(0);
   border: 2px solid govuk-colour("smbc-blue");
   border-radius: 2px;
-  font-size: 16px;
-  font-weight: 800;
+  font-weight: $govuk-font-weight-bold;
   cursor: pointer;
   align-items: center;
   justify-content: center;
 }
 
-@include govuk-media-query($from: desktop) {
-  .smbc-time__time-label {
-    font-size: 18px;
-  }
-}
-
-.smbc-time__time-label--left {
+.smbc-time__time__label--left {
   float: left;
 }
 
-.smbc-time__time-label--centre {
+.smbc-time__time__label--centre {
   margin-right: auto;
   margin-left: auto;
 }
 
-.smbc-time__time-label--right {
+.smbc-time__time__label--right {
   float: right;
-}
-
-.smbc-time__input--time:checked + label {
-  color: govuk-colour("white");
-  background-color: govuk-colour("smbc-blue");
 }
