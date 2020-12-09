@@ -25,7 +25,7 @@
 }
 
 .smbc-calendar__header__button {
-  width: 50px;
+  width: 75px;
   height: 55px;
   padding: govuk-spacing(0);
   border: 0;
@@ -38,6 +38,17 @@
 
   &:focus:not(:active):not(:hover) {
     outline: 2px solid govuk-colour("yellow");
+    outline-offset: -2px;
+  }
+
+  &:focus:not(:active) {
+    outline: 0;
+  }
+}
+
+@include govuk-media-query($from: desktop) {
+  .smbc-calendar__header__button {
+    width: 50px;
   }
 }
 
