@@ -36,9 +36,23 @@ gulp.task('styles', gulp.series(
 // Copy assets task ----------------------
 // Copies assets to taskArguments.destination
 // --------------------------------------
-gulp.task('copy:assets', () => {
-  return gulp.src(paths.src + 'assets/**/*')
-    .pipe(gulp.dest(taskArguments.destination + '/assets/'))
+gulp.task('copy:assets', async () => {
+  const assetLocations = [
+    {
+      src: paths.src + 'assets/**/*',
+      destination: taskArguments.destination + '/assets/'
+    },
+    {
+      src: paths.FontAwesome + 'webfonts/**/*',
+      destination: taskArguments.destination + '/assets/fonts/font-awesome'
+    }
+  ]
+
+  return assetLocations.forEach(asset => {
+    gulp.src(asset.src)
+      .pipe(gulp.dest(asset.destination))
+      .on('error', console.log)
+  })
 })
 
 // Copy assets task for local -----------
