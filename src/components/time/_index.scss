@@ -32,7 +32,7 @@
   width: 0;
   opacity: 0;
 
-  &:focus:not(:active):not(:hover) + label {
+  &:focus + label {
     outline: 2px solid govuk-colour("yellow");
   }
 
@@ -77,11 +77,17 @@
   width: 0;
   opacity: 0;
 
-  &:focus:not(:active):not(:hover) + label {
+  &:focus + label {
     outline: 2px solid govuk-colour("yellow");
   }
 
   &:checked + label {
+    color: govuk-colour("white");
+    background-color: govuk-colour("smbc-blue");
+  }
+
+  &:active + label {
+    outline: 2px solid govuk-colour("yellow");
     color: govuk-colour("white");
     background-color: govuk-colour("smbc-blue");
   }
