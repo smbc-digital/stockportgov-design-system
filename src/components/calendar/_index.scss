@@ -51,6 +51,7 @@
 }
 
 .smbc-calendar__header__button--disabled:hover {
+  background-color: govuk-colour("white");
   cursor: default;
 }
 
