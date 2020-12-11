@@ -31,7 +31,7 @@
   border: 0;
   background-color: govuk-colour("white");
 
-  @include govuk-media-query($from: desktop) {
+  @include govuk-media-query($from: tablet) {
     width: 50px;
   }
 
@@ -41,11 +41,14 @@
   }
 
   &:focus:not(:active):not(:hover) {
+    border: 0;
     outline: 2px solid govuk-colour("yellow");
     outline-offset: -2px;
   }
 
-  &:focus:not(:active) {
+  &:focus,
+  &:active {
+    border: 0;
     outline: 0;
   }
 }
