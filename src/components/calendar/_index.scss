@@ -36,6 +36,7 @@
   }
 
   &:hover {
+    color: govuk-colour("black");
     background-color: govuk-colour("light-grey");
     cursor: pointer;
   }
@@ -45,6 +46,7 @@
     border: 0;
     outline: 2px solid govuk-colour("yellow");
     outline-offset: -2px;
+    color: govuk-colour("black");
   }
 }
 
