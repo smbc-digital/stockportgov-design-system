@@ -33,7 +33,11 @@
   opacity: 0;
 
   &:focus + label {
-    outline: 2px solid govuk-colour("yellow");
+    @extend .govuk-button:focus;
+  }
+
+  &:focus:not(:active):not(:hover) + label {
+    @extend .govuk-button:focus:not(:active):not(:hover);
   }
 
   &:checked + label {
@@ -78,7 +82,15 @@
   opacity: 0;
 
   &:focus + label {
-    outline: 2px solid govuk-colour("yellow");
+    @extend .govuk-button:focus;
+
+    border-radius: 0;
+  }
+
+  &:focus:not(:active):not(:hover) + label {
+    @extend .govuk-button:focus:not(:active):not(:hover);
+
+    border-radius: 0;
   }
 
   &:checked + label {

@@ -11,6 +11,7 @@
 
 .smbc-calendar__header {
   display: flex;
+  padding: 1px;
   border-bottom: 2px solid govuk-colour("black");
   justify-content: space-between;
   align-items: center;
@@ -41,7 +42,16 @@
     cursor: pointer;
   }
 
-  &:focus,
+  &:focus {
+    @extend .govuk-button:focus;
+  }
+
+  &:focus:not(:active):not(:hover) {
+    @extend .govuk-button:focus:not(:active):not(:hover);
+
+    box-shadow: inset 0 -2px 0 govuk-colour("black");
+  }
+
   &:active {
     border: 0;
     outline: 2px solid govuk-colour("yellow");
@@ -117,21 +127,26 @@
   width: 0;
   opacity: 0;
 
-  &:focus + label {
+  &:active + label {
     outline: 2px solid govuk-colour("yellow");
     outline-offset: -2px;
-  }
-
-  &:checked + label {
     color:  govuk-colour("white");
     background-color: govuk-colour("smbc-blue");
     font-weight: $govuk-font-weight-bold;
   }
 
-  &:active + label {
-    outline: 2px solid govuk-colour("yellow");
-    outline-offset: -2px;
-    color:  govuk-colour("white");
+  &:focus + label {
+    @extend .govuk-button:focus;
+  }
+
+  &:focus:not(:active):not(:hover) + label {
+    @extend .govuk-button:focus:not(:active):not(:hover);
+
+    box-shadow: inset 0 -2px 0 govuk-colour("black");
+  }
+
+  &:checked + label {
+    color: govuk-colour("white");
     background-color: govuk-colour("smbc-blue");
     font-weight: $govuk-font-weight-bold;
   }
