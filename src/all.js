@@ -1,5 +1,7 @@
 import { nodeListForEach } from './common'
 import Button from './components/button/button'
+import Calendar from './components/calendar/calendar'
+import Time from './components/time/time'
 import FileUpload from './components/file-upload/file-upload'
 import MultipleFileUpload from './components/file-upload/multiple-file-upload'
 import Recaptcha from './components/recaptcha/recaptcha'
@@ -30,6 +32,16 @@ function initAll (options) {
   var $recaptchas = scope.querySelectorAll('[data-module="smbc-recaptcha"]')
   nodeListForEach($recaptchas, function ($recaptcha) {
     new Recaptcha($recaptcha).init()
+  })
+
+  var $calendars = scope.querySelectorAll('[data-module="smbc-calendar"]')
+  nodeListForEach($calendars, function ($calendar) {
+    new Calendar($calendar).init()
+  })
+
+  var $times = scope.querySelectorAll('[data-module="smbc-time"]')
+  nodeListForEach($times, function ($time) {
+    new Time($time).init()
   })
 }
 

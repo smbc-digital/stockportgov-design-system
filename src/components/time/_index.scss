@@ -5,6 +5,12 @@
   width: 344px;
 }
 
+.smbc-time__conditional {
+  .js-enabled &--hidden {
+    display: none;
+  }
+}
+
 .smbc-time__header {
   display: flex;
   margin-bottom: govuk-spacing(6);
@@ -17,6 +23,12 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.smbc-time__body__conditional {
+  .js-enabled &--hidden {
+    display: none;
+  }
 }
 
 .smbc-time__period {
