@@ -11,8 +11,14 @@
   }
 }
 
+.js-enabled {
+  .smbc-time__header {
+    display: flex;
+  }
+} 
+
 .smbc-time__header {
-  display: flex;
+  display: none;
   margin-bottom: govuk-spacing(6);
   flex-direction: row;
   flex-wrap: wrap;
