@@ -47,7 +47,7 @@ describe('dist/', () => {
         .then(results => {
           const [actualDistAssets, expectedDistAssets] = results
 
-          expect(actualDistAssets).toEqual(expectedDistAssets)
+          expect(actualDistAssets).toEqual(expect.arrayContaining(expectedDistAssets))
         })
     })
   })

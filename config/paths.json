@@ -2,5 +2,6 @@
   "dist": "dist/",
   "src": "src/",
   "config": "config/",
-  "GOVUKFrontend": "node_modules/govuk-frontend/govuk/"
+  "GOVUKFrontend": "node_modules/govuk-frontend/govuk/",
+  "FontAwesome": "node_modules/@fortawesome/fontawesome-free/"
 }

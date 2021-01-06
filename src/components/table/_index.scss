@@ -1,4 +1,5 @@
-.smbc-table__cell--wrap {
-  max-width: 0;
-  word-break: break-all;
+.smbc-table__header {
+  @extend .govuk-table__header;
+
+  font-weight: 400;
 }
