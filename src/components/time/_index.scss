@@ -5,10 +5,8 @@
   width: 344px;
 }
 
-.smbc-time__conditional {
-  .js-enabled &--hidden {
-    display: none;
-  }
+.smbc-time__conditional--hidden {
+  display: none;
 }
 
 .js-enabled {
