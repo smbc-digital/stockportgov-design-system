@@ -1,0 +1,17 @@
+@import "../../settings/all";
+@import "../../helpers/all";
+
+.smbc-section {
+  padding: govuk-spacing(6);
+}
+
+.smbc-section-vertical-separator--right {
+  @include govuk-media-query($from: tablet) {
+    margin: 0 govuk-spacing(8);
+    border-right: 1px solid $govuk-border-colour;
+  }
+}
+
+.smbc-section--bordered {
+  border: 1px solid $govuk-border-colour;
+}
