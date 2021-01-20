@@ -1,7 +1,15 @@
 @import "../../settings/all";
 @import "../../helpers/all";
 
-.smbc-section {
+.smbc-information-section {
+  padding-top: govuk-spacing(6);
+
+  @include govuk-media-query($from: tablet) {
+    margin-left: govuk-spacing(8);
+  }
+}
+
+.smbc-input-section {
   padding: govuk-spacing(6);
 
   @include govuk-media-query($from: tablet) {
@@ -9,12 +17,6 @@
   }
 }
 
-.smbc-section-vertical-separator--right {
-  @include govuk-media-query($from: tablet) {
-    border-right: 1px solid $govuk-border-colour;
-  }
-}
-
-.smbc-section--bordered {
+.smbc-input-section--bordered {
   border: 1px solid $govuk-border-colour;
 }
