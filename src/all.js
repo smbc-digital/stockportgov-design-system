@@ -1,4 +1,5 @@
 import { nodeListForEach } from './common'
+import Accessibility from './core/_accessibility'
 import Button from './components/button/button'
 import Calendar from './components/calendar/calendar'
 import Time from './components/time/time'
@@ -13,6 +14,11 @@ function initAll (options) {
   // Allow the user to initialise GOV.UK Frontend in only certain sections of the page
   // Defaults to the entire document if nothing is set.
   var scope = typeof options.scope !== 'undefined' ? options.scope : document
+
+  var $accessibility = scope.querySelectorAll('[class*="smbc-accessibility"]')
+  nodeListForEach($accessibility, function ($accessibility) {
+    new Accessibility($accessibility).init()
+  })
 
   var $buttons = scope.querySelectorAll('[data-module="govuk-button"]')
   nodeListForEach($buttons, function ($button) {
