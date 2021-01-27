@@ -50,10 +50,3 @@
   text-decoration: none;
   white-space: nowrap;
 }
-
-.smbc-header__search__icon::before {
-  @extend %fa-icon; // sass-lint:disable-line placeholder-name-format
-  @extend .fas;
-
-  content: $fas-search;
-}
