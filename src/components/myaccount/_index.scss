@@ -1,0 +1,26 @@
+@import "../../settings/all";
+@import "../../helpers/all";
+
+.smbc-myaccount {
+  @extend .govuk-grid-column-one-half
+}
+
+.smbc-myaccount__information-section {
+  padding-top: govuk-spacing(6);
+
+  @include govuk-media-query($from: tablet) {
+    margin-left: govuk-spacing(8);
+  }
+}
+
+.smbc-myaccount__input-section {
+  padding: govuk-spacing(6);
+
+  @include govuk-media-query($from: tablet) {
+    margin-right: govuk-spacing(8);
+  }
+}
+
+.smbc-myaccount__input-section--bordered {
+  border: 1px solid $govuk-border-colour;
+}
