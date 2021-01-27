@@ -2,7 +2,7 @@
 @import "../../settings/all";
 
 .smbc-information__icon {
-  @include govuk-font($size: 19);
+  @include govuk-font($size: 27);
   display: flex;
   width: 48px;
   height: 48px;
