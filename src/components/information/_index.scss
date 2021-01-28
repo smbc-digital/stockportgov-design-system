@@ -9,7 +9,7 @@
   color: govuk-colour("white");
   background-color: govuk-colour("smbc-green");
   font-size: govuk-px-to-rem(27);
-  line-height: _govuk-line-height(30px, 27px);
+  line-height: _govuk-line-height($line-height: 30px, $font-size: 27px);
   justify-content: center;
   align-items: center;
 }
