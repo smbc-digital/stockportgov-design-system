@@ -56,6 +56,10 @@
       background: none;
       flex-grow: 1;
 
+      &::placeholder {
+        color: govuk-colour("smbc-black");
+      }
+
       @include govuk-media-query($from: desktop) {
         max-width: 85% !important;
       }
