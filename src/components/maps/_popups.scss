@@ -41,6 +41,7 @@
     padding: 5px 20px 5px 5px;
     overflow-y: auto;
     line-height: 1.4;
+    word-break: break-word;
 
     &:not(:last-of-type) {
       border-bottom: 2px solid govuk-colour("light-grey");
