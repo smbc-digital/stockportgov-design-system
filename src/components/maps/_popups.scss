@@ -1,6 +1,33 @@
 @import "../../helpers/all";
 @import "../../settings/all";
 
+.smbc-map__item:not(:first-of-type) {
+  padding-top: 10px;
+}
+
+.smbc-map__item__header__block {
+  display: flex;
+  color:  govuk-colour("light-grey");
+  align-items: center;
+  @include govuk-font($size: 19);
+
+  &__icon {
+    padding-right: 10px;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    @include govuk-font($size: 16);
+  }
+}
+
+.smbc-map__item__body {
+  @extend .smbc-body;
+  padding-left: 27px;
+  color: govuk-colour("white");
+}
+
 .leaflet-popup > .leaflet-popup-content-wrapper {
   width: 100%;
   border-radius: 3px;
@@ -8,6 +35,14 @@
   background-color: rgba(0, 0, 0, 0.9); // sass-lint:disable-line no-color-literals leading-zero
 
   .leaflet-popup-content {
+    max-width: 270px;
+    max-height: 400px;
+    margin: 25px 5px 19px 13px;
+    padding: 5px 20px 5px 5px;
+    overflow-y: auto;
+    line-height: 1.4;
+    word-break: break-word;
+
     &:not(:last-of-type) {
       border-bottom: 2px solid govuk-colour("light-grey");
     }
@@ -27,14 +62,6 @@
 
     .info {
       margin-top: 0;
-    }
-
-    .fa {
-      position: absolute;
-      left: 14px;
-      padding-left: 6px;
-      color: govuk-colour("light-grey");
-      line-height: 1.316;
     }
 
     a {

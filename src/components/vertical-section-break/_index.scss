@@ -1,0 +1,8 @@
+@import "../../settings/all";
+@import "../../helpers/all";
+
+.smbc-vertical-section-break {
+  @include govuk-media-query($from: tablet) {
+    border-right: 1px solid $govuk-border-colour;
+  }
+}

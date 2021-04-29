@@ -1,0 +1,10 @@
+.smbc-accessibility {
+  &__nojs {
+    &--hidden {
+      // "smbc-accessibility__nojs--hidden" class
+      // used for elements that should remain hidden when JS is not enabled
+      // This class will be removed when JS is enabled
+      display: none;
+    }
+  }
+}

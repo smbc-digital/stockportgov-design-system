@@ -1,0 +1,55 @@
+@import "../../helpers/all";
+@import "../../settings/all";
+
+.smbc-information__icon {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  border-radius: 80px;
+  color: govuk-colour("white");
+  background-color: govuk-colour("smbc-green");
+  font-size: govuk-px-to-rem(27);
+  line-height: _govuk-line-height($line-height: 30px, $font-size: 27px);
+  justify-content: center;
+  align-items: center;
+}
+
+.smbc-information__icon--desktop::before {
+  @extend %fa-icon; // sass-lint:disable-line placeholder-name-format
+  @extend .fas;
+
+  content: $fas-desktop;
+}
+
+.smbc-information__icon--calendar-check::before {
+  @extend %fa-icon; // sass-lint:disable-line placeholder-name-format
+  @extend .fas;
+
+  content: $fas-calendar-check;
+}
+
+.smbc-information__icon--file-alt::before {
+  @extend %fa-icon; // sass-lint:disable-line placeholder-name-format
+  @extend .fas;
+
+  content: $fas-file-alt;
+}
+
+.smbc-information__icon--trash-alt::before {
+  @extend %fa-icon; // sass-lint:disable-line placeholder-name-format
+  @extend .fas;
+
+  content: $fas-trash-alt;
+}
+
+.smbc-information__body {
+  @extend .smbc-body;
+  margin-bottom: govuk-spacing(0);
+  margin-left: govuk-spacing(4);
+}
+
+.smbc-information {
+  display: flex;
+  margin-bottom: govuk-spacing(7);
+  align-items: center;
+}

@@ -7,4 +7,32 @@
   @include govuk-media-query($from: mobile) {
     line-height: 1.5;
   }
+
+  &--centre-align {
+    text-align: center;
+  }
+
+  &--line-through {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    &:before,
+    &:after {
+      content: "";
+      margin: 0 10px 0 0;
+      border-top: 1px solid $govuk-border-colour;
+      flex: 1 0 30px;
+
+      @include govuk-media-query($from: desktop) {
+        flex: 1 0 10px;
+      }
+    }
+
+    &:after {
+      margin: 0 0 0 10px;
+    }
+  }
 }
