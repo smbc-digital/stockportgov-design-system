@@ -7,7 +7,7 @@
     "node": "12.13.1"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.2"
+    "@fortawesome/fontawesome-free": "^5.15.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
