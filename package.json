@@ -47,7 +47,7 @@
   "scripts": {
     "build:dist": "node bin/check-nvmrc.js && gulp build:dist --destination dist && npm run test:build:dist",
     "test": "npm run test:dependencies && standard && gulp test && gulp copy-assets && jest --testPathIgnorePatterns='after-*'",
-    "test:dependencies": "npm ls --depth=0",
+    "test:dependencies": "npm ls -s --depth=0",
     "test:build:dist": "jest tasks/gulp/tests/after-build-dist.test.js"
   },
   "commitlint": {
