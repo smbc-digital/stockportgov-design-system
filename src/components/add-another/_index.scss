@@ -1,0 +1,23 @@
+@import "../../settings/all";
+@import "../../helpers/all";
+
+.smbc-add-another--fieldset {
+  @include govuk-media-query($from: tablet) {
+    width: 88%;
+  }
+
+  @include govuk-media-query($from: desktop) {
+    width: 64%;
+  }
+
+  position: relative;
+}
+
+.smbc-add-another--legend {
+  @include govuk-media-query($from: mobile) {
+    margin-bottom: 35px;
+  }
+
+  width: 100%;
+  float: left;
+}
