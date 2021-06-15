@@ -2,22 +2,13 @@
 @import "../../helpers/all";
 
 .smbc-add-another--fieldset {
-  @include govuk-media-query($from: tablet) {
-    width: 88%;
-  }
-
-  @include govuk-media-query($from: desktop) {
-    width: 64%;
-  }
-
-  position: relative;
+   position: relative;
 }
 
 .smbc-add-another--legend {
   @include govuk-media-query($from: mobile) {
-    margin-bottom: 35px;
+    margin-bottom: govuk-spacing(7);
   }
 
-  width: 100%;
   float: left;
 }
