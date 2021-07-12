@@ -51,10 +51,13 @@
       display: block !important;
       max-width: 70% !important;
       height: 28px;
+      transform: scale(.89);
       border: 0 !important;
       outline: none;
       background: none;
+      font-size: 16px;
       flex-grow: 1;
+      transform-origin: top left;
 
       &::placeholder {
         color: govuk-colour("smbc-black");
