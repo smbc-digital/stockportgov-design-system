@@ -5,6 +5,7 @@
   display: flex;
   height: 100%;
   flex-direction: row;
+
   .leaflet-control-layers-toggle,
   .leaflet-control-zoom-in,
   .leaflet-control-zoom-out,
@@ -22,6 +23,7 @@
     width: 36px !important;
     height: 36px !important;
   }
+
   .leaflet-top.leaflet-left {
     position: relative;
     order: 1;
@@ -44,6 +46,7 @@
     width: 100%;
     margin: 0;
     background-color: govuk-colour("white");
+
     input.search-input { // sass-lint:disable-line no-qualifying-elements
       display: block !important;
       max-width: 70% !important;
@@ -59,6 +62,7 @@
       &::placeholder {
         color: govuk-colour("smbc-black");
       }
+
       @include govuk-media-query($from: desktop) {
         max-width: 85% !important;
       }
@@ -72,7 +76,7 @@
       margin: 0;
       margin-top: 1px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, .2) !important; // sass-lint:disable-line no-color-literals
-      
+
       > .search-tip {
         margin: 0;
         padding: 7px;
@@ -81,6 +85,7 @@
         background: govuk-colour("white");
         font-size: .75em;
         cursor: pointer;
+
         &:hover {
           color: govuk-colour("white");
           background-color: govuk-colour("dark-grey");
