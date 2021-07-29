@@ -19,7 +19,6 @@ function Accordion ($module) {
 }
 
 Accordion.prototype.init = function () {
-  console.log("Initialising Accordian")
   if (!this.$module) {
     return
   }
