@@ -23,7 +23,7 @@ Accordion.prototype.init = function () {
     return
   }
 
-  if (this.$module.childNodes == null || this.$module.childNodes.length == 0) {
+  if (this.$module.childNodes === null || this.$module.childNodes.length === 0) {
     window.addEventListener('DOMContentLoaded', this.reInit.bind(this))
   } else {
     this.initSections(this.$module.childNodes)
@@ -61,7 +61,7 @@ Accordion.prototype.initSections = function (sections) {
           for (var i = 0; i < items.length; i++) {
             var classes = items[i].className.split(' ')
             for (var n = 0; n < classes.length; n++) {
-              if (classes[n] == this.sectionItemClass) {
+              if (classes[n] === this.sectionItemClass) {
                 classes[n] += this.hideDivClassOverride
               }
             }
@@ -87,7 +87,7 @@ Accordion.prototype.toggle = function (section) {
      children = header.childNodes
     for (var i = 0; i < children.length; i++) {
       var child = children[i]
-      if (child.nodeName == 'I') {
+      if (child.nodeName === 'I') {
         icon = child.className === this.closedIcon.className ? this.openedIcon.cloneNode() : this.closedIcon.cloneNode()
         header.removeChild(child)
       }
@@ -104,9 +104,9 @@ Accordion.prototype.toggle = function (section) {
     for (var i = 0; i < items.length; i++) {
       var classes = items[i].className.split(' ')
       for (var n = 0; n < classes.length; n++) {
-        if (classes[n] == this.sectionItemClass) {
+        if (classes[n] === this.sectionItemClass) {
           classes[n] += this.hideDivClassOverride
-        } else if (classes[n] == this.sectionItemClass + this.hideDivClassOverride) {
+        } else if (classes[n] === this.sectionItemClass + this.hideDivClassOverride) {
           classes[n] = this.sectionItemClass
         }
       }
