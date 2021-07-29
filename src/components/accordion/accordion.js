@@ -83,9 +83,9 @@ Accordion.prototype.groupClick = function (ev) {
 Accordion.prototype.toggle = function (section) {
   var header = section.querySelector('.' + this.sectionHeaderClass)
   if (header && header.hasChildNodes) {
-    var icon,
-     children = header.childNodes
-    for (var i = 0; i < children.length; i++) {
+    var icon, i
+    var children = header.childNodes
+    for (i = 0; i < children.length; i++) {
       var child = children[i]
       if (child.nodeName === 'I') {
         icon = child.className === this.closedIcon.className ? this.openedIcon.cloneNode() : this.closedIcon.cloneNode()
@@ -101,7 +101,7 @@ Accordion.prototype.toggle = function (section) {
 
   var items = section.querySelectorAll('[class*=' + this.sectionItemClass)
   if (items) {
-    for (var i = 0; i < items.length; i++) {
+    for (i = 0; i < items.length; i++) {
       var classes = items[i].className.split(' ')
       for (var n = 0; n < classes.length; n++) {
         if (classes[n] === this.sectionItemClass) {
