@@ -13,15 +13,32 @@
     margin-bottom: 0;
   }
 
-  .leaflet-control-layers-selector {
-    display: inline-block;
-    width: 15px;
-    margin-bottom: 0;
-  }
+  .leaflet-control-layers {
+    &-group {
+      &-label {
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
 
-  .leaflet-control-layers-toggle {
-    width: 36px !important;
-    height: 36px !important;
+    &-layer {
+      cursor: pointer;
+
+      & label {
+      display: inline-block !important;
+      }
+    }
+
+    &-selector {
+      display: inline-block;
+      width: 15px;
+      margin-bottom: 0;
+    }
+
+    &-toggle {
+      width: 36px !important;
+      height: 36px !important;
+    }
   }
 
   .leaflet-top.leaflet-left {
