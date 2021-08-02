@@ -29,6 +29,7 @@
   border-radius: 2px;
   outline: none;
   background: none;
+  font-family: $govuk-font-family;
   font-size: govuk-px-to-rem(16);
   flex-grow: 1;
   transform-origin: top left;
@@ -93,6 +94,7 @@
   list-style: none;
   background-color: rgba(0, 0, 0, .25); // sass-lint:disable-line no-color-literals
   box-shadow: 0 5px 20px rgba(0, 0, 0, .2); // sass-lint:disable-line no-color-literals
+  font-family: $govuk-font-family;
   cursor: pointer;
 }
 
