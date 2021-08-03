@@ -1,3 +1,5 @@
+@import "../../helpers/all";
+
 .smbc-accordion__item {
   display: block;
 }
@@ -11,17 +13,17 @@
     content: "\f146";
     visibility: visible;
     border: 0;
-    color: black;
+    color: govuk-colour("smbc-black");
     background: 0 0;
     font-family: "FontAwesome";
     font-size: 20px;
   }
-  
+
   &--closed::before {
     content: "\f0fe";
     visibility: visible;
     border: 0;
-    color: black;
+    color: govuk-colour("smbc-black");
     background: 0 0;
     font-family: "FontAwesome";
     font-size: 20px;
