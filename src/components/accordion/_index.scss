@@ -8,7 +8,7 @@
   display: none;
 }
 
-.smbc-accordion__icon {
+.smbc-accordion__icon-left {
   &--open::before {
     content: "\f146";
     visibility: visible;
