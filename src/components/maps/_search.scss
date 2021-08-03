@@ -5,54 +5,58 @@
   display: flex;
   position: relative;
   z-index: 1000;
-  width: 100%;
+  width: 120%;
   margin: 0 !important;
   float: left;
+  transform: scale(.83);
   border: 2px solid rgba(0, 0, 0, .2); // sass-lint:disable-line no-color-literals
   border-radius: 4px;
   background: govuk-colour("white");
   background-color: rgba(255, 255, 255, .8); // sass-lint:disable-line no-color-literals
+  font-size: govuk-px-to-rem(16);
   background-clip: padding-box;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
+  transform-origin: top left;
 }
 
 .smbc-map-search__input {
   display: block;
-  max-width: 70%;
-  height: 28px;
+  max-width: 83%;
+  height: 34px;
   margin: 4px 0 4px 4px;
   padding: 0 20px 0 2px;
   float: left;
-  transform: scale(.83) translate(0, 2px);
   border: 0;
   border-radius: 2px;
   outline: none;
   background: none;
   font-family: $govuk-font-family;
-  font-size: govuk-px-to-rem(16);
   flex-grow: 1;
-  transform-origin: top left;
 
   &::placeholder {
     color: govuk-colour("smbc-black");
   }
 
+  @include govuk-media-query($from: tablet) {
+    max-width: 93%;
+  }
+
   @include govuk-media-query($from: desktop) {
-    max-width: 85% !important;
+    max-width: 95%;
   }
 }
 
 .smbc-map-search__cancel {
   display: block;
   position: absolute;
-  right: 5px;
-  width: 22px;
-  height: 22px;
-  margin: 4px 0 0 0;
+  right: 6px;
+  width: 26px;
+  height: 26px;
+  margin: 5px 0 0 0;
   opacity: .8;
   background: none;
-  line-height: 26px;
+  line-height: 31px;
   text-decoration: none;
   filter: alpha(opacity=80);
 
@@ -73,7 +77,7 @@
     color: govuk-colour("dark-grey");
     background: 0 0;
     font-family: "FontAwesome";
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 
