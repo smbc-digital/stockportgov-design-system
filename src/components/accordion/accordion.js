@@ -60,7 +60,7 @@ Accordion.prototype._initSection = function ($section) {
       if ($items) {
         var classToReplace = this.sectionItemClass
         var replacementClass = this.hiddenSectionItemClass
-        nodeListForEach($items, function($item) {
+        nodeListForEach($items, function ($item) {
           $item.classList.replace(classToReplace, replacementClass)
         })
       }
@@ -90,10 +90,10 @@ Accordion.prototype._handleClick = function (event) {
  *
  * @param {Node} $section DIV
  */
-Accordion.prototype._toggle = function ($section) { 
+Accordion.prototype._toggle = function ($section) {
   var classToReplace = this.collapse ? this.hiddenSectionItemClass : this.sectionItemClass
   var replacementClass = this.collapse ? this.sectionItemClass : this.hiddenSectionItemClass
-  this.collapse = this.collapse ? false : true
+  this.collapse = this.collapse ? !this.collapse : this.collapse
   var $header = $section.querySelector('.' + this.sectionHeaderClass)
   if ($header && $header.firstElementChild) {
     $header.classList.remove(this.collapse ? this.openedIconClass : this.closedIconClass)
@@ -102,7 +102,7 @@ Accordion.prototype._toggle = function ($section) {
 
   var $items = $section.querySelectorAll('.' + classToReplace)
   if ($items) {
-    nodeListForEach($items, function($item) {
+    nodeListForEach($items, function ($item) {
       $item.classList.replace(classToReplace, replacementClass)
     })
   }
