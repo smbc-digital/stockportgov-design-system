@@ -5,3 +5,25 @@
 .smbc-accordion__item--hidden {
   display: none;
 }
+
+.smbc-accordion__icon {
+  &--open::before {
+    content: "\f146";
+    visibility: visible;
+    border: 0;
+    color: black;
+    background: 0 0;
+    font-family: "FontAwesome";
+    font-size: 20px;
+  }
+  
+  &--closed::before {
+    content: "\f0fe";
+    visibility: visible;
+    border: 0;
+    color: black;
+    background: 0 0;
+    font-family: "FontAwesome";
+    font-size: 20px;
+  }
+}
