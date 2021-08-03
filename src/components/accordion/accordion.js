@@ -1,21 +1,20 @@
 import 'govuk-frontend/govuk/vendor/polyfills/Event' // addEventListener and event.target normaliziation
 import 'govuk-frontend/govuk/vendor/polyfills/Function/prototype/bind'
+import 'govuk-frontend/govuk/vendor/polyfills/Element/prototype/classList'
+import { nodeListForEach } from '../../common'
 
 function Accordion ($module) {
   this.$module = $module
-  this.moduleId = $module.getAttribute('id')
 
   this.collapse = true
 
-  this.hideDivClassOverride = '--hidden'
   this.sectionHeaderClass = 'smbc-accordion__header'
   this.sectionItemClass = 'smbc-accordion__item'
+  this.hiddenSectionItemClass = this.sectionItemClass + '--hidden'
 
-  this.closedIcon = document.createElement('i')
-  this.closedIcon.className = 'fas fa-caret-square-right'
-
-  this.openedIcon = document.createElement('i')
-  this.openedIcon.className = 'fas fa-caret-square-down'
+  this.iconClass = 'smbc-accordion__icon-left'
+  this.openedIconClass = this.iconClass + '--open'
+  this.closedIconClass = this.iconClass + '--closed'
 }
 
 Accordion.prototype.init = function () {
@@ -24,94 +23,88 @@ Accordion.prototype.init = function () {
   }
 
   if (this.$module.childNodes === null || this.$module.childNodes.length === 0) {
-    window.addEventListener('DOMContentLoaded', this.reInit.bind(this))
+    window.addEventListener('DOMContentLoaded', this._reInit.bind(this))
   } else {
-    this.initSections(this.$module.childNodes)
+    nodeListForEach(this.$module.childNodes, this._initSection.bind(this))
   }
 }
 
-Accordion.prototype.reInit = function () {
+Accordion.prototype._reInit = function () {
   if (!this.$module) {
     return
   }
 
   if (this.$module.childNodes != null || this.$module.childNodes.length > 0) {
-    this.initSections(this.$module.childNodes)
+    nodeListForEach(this.$module.childNodes, this._initSection.bind(this))
   }
 }
 
-Accordion.prototype.initSections = function (sections) {
-  for (var x = 0; x < sections.length; x++) {
-    var section = sections[x]
-    if (section.hasAttribute('data-section')) {
-      var header = section.querySelector('.' + this.sectionHeaderClass)
-      if (header) {
-        var icon = this.collapse === true ? this.closedIcon.cloneNode() : this.openedIcon.cloneNode()
-        icon.addEventListener('click', this.groupClick.bind(this))
-        if (header.firstElementChild) {
-          header.firstElementChild.addEventListener('click', this.groupClick.bind(this))
-          header.insertBefore(icon, header.firstElementChild)
-        } else {
-          header.append(icon)
-        }
+/**
+ * Set up the Sections of the Accordion
+ *
+ * @param {Node} $section DIV
+ */
+Accordion.prototype._initSection = function ($section) {
+  if ($section.hasAttribute('data-section')) {
+    var $header = $section.querySelector('.' + this.sectionHeaderClass)
+    if ($header) {
+      $header.addEventListener('click', this._handleClick.bind(this))
+      if ($header.firstElementChild) {
+        $header.classList.remove(this.collapse ? this.openedIconClass : this.closedIconClass)
+        $header.classList.add(this.collapse ? this.closedIconClass : this.openedIconClass)
       }
-      if (this.collapse === true) {
-        var items = section.querySelectorAll('.' + this.sectionItemClass)
-        if (items) {
-          for (var i = 0; i < items.length; i++) {
-            var classes = items[i].className.split(' ')
-            for (var n = 0; n < classes.length; n++) {
-              if (classes[n] === this.sectionItemClass) {
-                classes[n] += this.hideDivClassOverride
-              }
-            }
-            items[i].className = classes.join(' ')
-          }
-        }
+    }
+
+    if (this.collapse === true) {
+      var $items = $section.querySelectorAll('.' + this.sectionItemClass)
+      if ($items) {
+        var classToReplace = this.sectionItemClass
+        var replacementClass = this.hiddenSectionItemClass
+        nodeListForEach($items, function ($item) {
+          $item.classList.replace(classToReplace, replacementClass)
+        })
       }
     }
   }
 }
 
-Accordion.prototype.groupClick = function (ev) {
-  var section = ev.target.parentElement.parentElement
-  if (section.hasAttribute('data-section')) {
-    this.toggle(section)
+/**
+ * Click event handler
+ *
+ * Handle a click within the $section
+ *
+ * @param {MouseEvent} event Click event
+ */
+Accordion.prototype._handleClick = function (event) {
+  if (event.target.hasAttribute('data-section')) {
+    this._toggle(event.target)
+  } else if (event.target.parentElement.hasAttribute('data-section')) {
+    this._toggle(event.target.parentElement)
+  } else if (event.target.parentElement.parentElement.hasAttribute('data-section')) {
+    this._toggle(event.target.parentElement.parentElement)
   }
 }
 
-Accordion.prototype.toggle = function (section) {
-  var header = section.querySelector('.' + this.sectionHeaderClass)
-  if (header && header.hasChildNodes) {
-    var icon, i
-    var children = header.childNodes
-    for (i = 0; i < children.length; i++) {
-      var child = children[i]
-      if (child.nodeName === 'I') {
-        icon = child.className === this.closedIcon.className ? this.openedIcon.cloneNode() : this.closedIcon.cloneNode()
-        header.removeChild(child)
-      }
-    }
-    if (header.firstElementChild) {
-      header.insertBefore(icon, header.firstElementChild)
-    } else {
-      header.append(icon)
-    }
+/**
+ * Toggle the Sections of the Accordion open/closed
+ *
+ * @param {Node} $section DIV
+ */
+Accordion.prototype._toggle = function ($section) {
+  var classToReplace = this.collapse ? this.hiddenSectionItemClass : this.sectionItemClass
+  var replacementClass = this.collapse ? this.sectionItemClass : this.hiddenSectionItemClass
+  this.collapse = this.collapse ? !this.collapse : this.collapse
+  var $header = $section.querySelector('.' + this.sectionHeaderClass)
+  if ($header && $header.firstElementChild) {
+    $header.classList.remove(this.collapse ? this.openedIconClass : this.closedIconClass)
+    $header.classList.add(this.collapse ? this.closedIconClass : this.openedIconClass)
   }
 
-  var items = section.querySelectorAll('[class*=' + this.sectionItemClass)
-  if (items) {
-    for (i = 0; i < items.length; i++) {
-      var classes = items[i].className.split(' ')
-      for (var n = 0; n < classes.length; n++) {
-        if (classes[n] === this.sectionItemClass) {
-          classes[n] += this.hideDivClassOverride
-        } else if (classes[n] === this.sectionItemClass + this.hideDivClassOverride) {
-          classes[n] = this.sectionItemClass
-        }
-      }
-      items[i].className = classes.join(' ')
-    }
+  var $items = $section.querySelectorAll('.' + classToReplace)
+  if ($items) {
+    nodeListForEach($items, function ($item) {
+      $item.classList.replace(classToReplace, replacementClass)
+    })
   }
 }
 
