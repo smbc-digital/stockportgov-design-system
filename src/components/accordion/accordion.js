@@ -68,13 +68,6 @@ Accordion.prototype._initSection = function ($section) {
   }
 }
 
-/**
- * Click event handler
- *
- * Handle a click within the $section
- *
- * @param {MouseEvent} event Click event
- */
 Accordion.prototype._handleClick = function (event) {
   if (event.target.hasAttribute('data-section')) {
     this._toggle(event.target)
@@ -93,7 +86,9 @@ Accordion.prototype._handleClick = function (event) {
 Accordion.prototype._toggle = function ($section) {
   var classToReplace = this.collapse ? this.hiddenSectionItemClass : this.sectionItemClass
   var replacementClass = this.collapse ? this.sectionItemClass : this.hiddenSectionItemClass
-  this.collapse = this.collapse ? !this.collapse : this.collapse
+
+  this.collapse = this.collapse ? !this.collapse : true
+
   var $header = $section.querySelector('.' + this.sectionHeaderClass)
   if ($header && $header.firstElementChild) {
     $header.classList.remove(this.collapse ? this.openedIconClass : this.closedIconClass)
