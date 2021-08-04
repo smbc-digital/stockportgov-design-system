@@ -87,7 +87,7 @@ Accordion.prototype._toggle = function ($section) {
   var classToReplace = this.collapse ? this.hiddenSectionItemClass : this.sectionItemClass
   var replacementClass = this.collapse ? this.sectionItemClass : this.hiddenSectionItemClass
 
-  this.collapse = this.collapse ? !this.collapse : true
+  this.collapse = !this.collapse
 
   var $header = $section.querySelector('.' + this.sectionHeaderClass)
   if ($header && $header.firstElementChild) {
