@@ -1,0 +1,119 @@
+@import "../../helpers/all";
+@import "../../settings/all";
+
+.smbc-map-search.leaflet-control {
+  display: flex;
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  margin: 0 !important;
+  float: left;
+  border: 2px solid rgba(0, 0, 0, .2); // sass-lint:disable-line no-color-literals
+  border-radius: 4px;
+  background: govuk-colour("white");
+  background-color: rgba(255, 255, 255, .8); // sass-lint:disable-line no-color-literals
+  background-clip: padding-box;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+.smbc-map-search__input {
+  display: block;
+  max-width: 100%;
+  height: 28px;
+  margin: 4px 26px 4px 4px;
+  padding: 0 20px 0 2px;
+  float: left;
+  border: 0;
+  border-radius: 2px;
+  outline: none;
+  background: none;
+  font-family: $govuk-font-family;
+  font-size: govuk-px-to-rem(16);
+  flex-grow: 1;
+
+  &::placeholder {
+    color: govuk-colour("smbc-black");
+  }
+}
+
+.smbc-map-search__cancel {
+  display: block;
+  position: absolute;
+  right: 6px;
+  width: 22px;
+  height: 22px;
+  margin: 4px 0 0 0;
+  opacity: .8;
+  background: none;
+  line-height: 26px;
+  text-decoration: none;
+  filter: alpha(opacity=80);
+
+  &:hover {
+    opacity: 1;
+    background-color: govuk-colour("light-grey");
+    filter: alpha(opacity=100);
+  }
+
+  span {
+    display: none;
+  }
+
+  &::after {
+    content: "\f00d";
+    visibility: visible;
+    border: 0;
+    color: govuk-colour("dark-grey");
+    background: 0 0;
+    font-family: "FontAwesome";
+    font-size: 24px;
+  }
+}
+
+.smbc-map-search__tooltips {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  min-width: 120px;
+  max-height: 122px;
+  margin: 1px 0 0 0;
+  padding-left: 0;
+  float: left;
+  overflow-x: hidden;
+  overflow-y: auto;
+  list-style: none;
+  background-color: rgba(0, 0, 0, .25); // sass-lint:disable-line no-color-literals
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .2); // sass-lint:disable-line no-color-literals
+  font-family: $govuk-font-family;
+  cursor: pointer;
+}
+
+.smbc-map-search__tooltip {
+  display: block;
+  margin: 0;
+  padding: 7px;
+  border-bottom: 1px govuk-colour("light-grey") solid;
+  border-radius: 0;
+  color: govuk-colour("smbc-black");
+  background: govuk-colour("white");
+  font-size: .75em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:hover {
+    color: govuk-colour("white");
+    background-color: govuk-colour("dark-grey");
+  }
+}
+
+.smbc-map-search__tooltip--select {
+  border-top: 3px solid $govuk-focus-colour;
+  border-bottom: 3px solid $govuk-focus-colour;
+  color: govuk-colour("white");
+  background-color: govuk-colour("dark-grey");
+}

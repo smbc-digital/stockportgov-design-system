@@ -1,5 +1,6 @@
 import { nodeListForEach } from './common'
 import Accessibility from './core/_accessibility'
+import Accordion from './components/accordion/accordion'
 import Button from './components/button/button'
 import Calendar from './components/calendar/calendar'
 import Time from './components/time/time'
@@ -18,6 +19,11 @@ function initAll (options) {
   var $accessibility = scope.querySelectorAll('[class*="smbc-accessibility"]')
   nodeListForEach($accessibility, function ($accessibility) {
     new Accessibility($accessibility).init()
+  })
+
+  var $accordions = scope.querySelectorAll('[data-module="smbc-accordion"]')
+  nodeListForEach($accordions, function ($accordion) {
+    new Accordion($accordion).init()
   })
 
   var $buttons = scope.querySelectorAll('[data-module="govuk-button"]')
@@ -53,6 +59,7 @@ function initAll (options) {
 
 export {
   initAll,
+  Accordion,
   Button,
   FileUpload,
   MultipleFileUpload,
