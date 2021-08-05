@@ -1,6 +1,6 @@
 {
   "name": "smbc-design-system",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "",
   "main": "gulpfile.js",
   "engines": {
