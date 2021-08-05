@@ -73,4 +73,8 @@
     position: relative;
     font-family: $govuk-font-family;
   }
+
+  .smbc-control-layers--scrollbar {
+    overflow: scroll;
+  }
 }
