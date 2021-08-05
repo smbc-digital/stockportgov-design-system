@@ -49,18 +49,14 @@ jobs:
 
     - name: Build assets
       run: npm run build:dist
-    
+
     - name: Set environment
+      uses: haya14busa/action-cond@v1
       id: set_env
-      run: |
-        if [$REF == 'refs/heads/master']
-        then
-          echo "::set-output name=env::prod"
-        else
-          echo "::set-output name=env::int"
-        fi
-      env:
-        REF: ${{ github.ref }}
+      with:
+        cond: ${{ github.ref == 'refs/heads/master' }}
+        if_true: "prod"
+        if_false: "int"
 
     - name: S3 sync
       uses: jakejarvis/s3-sync-action@master
@@ -72,4 +68,4 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: 'eu-west-1'
         SOURCE_DIR: './dist'
-        DEST_DIR: '${{steps.set_env.outputs.env}}/${{steps.version.outputs.prop}}'
+        DEST_DIR: '${{steps.set_env.outputs.value}}/${{steps.version.outputs.prop}}'
