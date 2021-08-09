@@ -1,6 +1,6 @@
 import 'govuk-frontend/govuk/vendor/polyfills/Event' // addEventListener and event.target normaliziation
 import 'govuk-frontend/govuk/vendor/polyfills/Function/prototype/bind'
-import { nodeListForEach, _addClass, _removeClass } from '../../common'
+import { nodeListForEach } from '../../common'
 
 function Accordion ($module) {
   this.$module = $module
@@ -49,8 +49,8 @@ Accordion.prototype._initSection = function ($section) {
     if ($header) {
       $header.addEventListener('click', this._handleClick.bind(this))
       if ($header.firstElementChild) {
-        _removeClass($header, this.collapse ? this.openedIconClass : this.closedIconClass)
-        _addClass($header, this.collapse ? this.closedIconClass : this.openedIconClass)
+        $header.classList.remove(this.collapse ? this.openedIconClass : this.closedIconClass)
+        $header.classList.add(this.collapse ? this.closedIconClass : this.openedIconClass)
       }
     }
 
@@ -60,8 +60,8 @@ Accordion.prototype._initSection = function ($section) {
         var classToReplace = this.sectionItemClass
         var replacementClass = this.hiddenSectionItemClass
         nodeListForEach($items, function ($item) {
-          _removeClass($item, classToReplace)
-          _addClass($item, replacementClass)
+          $item.classList.remove(classToReplace)
+          $item.classList.add(replacementClass)
         })
       }
     }
@@ -91,15 +91,15 @@ Accordion.prototype._toggle = function ($section) {
 
   var $header = $section.querySelector('.' + this.sectionHeaderClass)
   if ($header && $header.firstElementChild) {
-    _removeClass($header, this.collapse ? this.openedIconClass : this.closedIconClass)
-    _addClass($header, this.collapse ? this.closedIconClass : this.openedIconClass)
+    $header.classList.remove(this.collapse ? this.openedIconClass : this.closedIconClass)
+    $header.classList.add(this.collapse ? this.closedIconClass : this.openedIconClass)
   }
 
   var $items = $section.querySelectorAll('.' + classToReplace)
   if ($items) {
     nodeListForEach($items, function ($item) {
-      _removeClass($item, classToReplace)
-      _addClass($item, replacementClass)
+      $item.classList.remove(classToReplace)
+      $item.classList.add(replacementClass)
     })
   }
 }
