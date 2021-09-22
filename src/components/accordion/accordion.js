@@ -1,6 +1,5 @@
 import 'govuk-frontend/govuk/vendor/polyfills/Event' // addEventListener and event.target normaliziation
 import 'govuk-frontend/govuk/vendor/polyfills/Function/prototype/bind'
-import 'govuk-frontend/govuk/vendor/polyfills/Element/prototype/classList'
 import { nodeListForEach } from '../../common'
 
 function Accordion ($module) {
@@ -61,7 +60,8 @@ Accordion.prototype._initSection = function ($section) {
         var classToReplace = this.sectionItemClass
         var replacementClass = this.hiddenSectionItemClass
         nodeListForEach($items, function ($item) {
-          $item.classList.replace(classToReplace, replacementClass)
+          $item.classList.remove(classToReplace)
+          $item.classList.add(replacementClass)
         })
       }
     }
@@ -98,7 +98,8 @@ Accordion.prototype._toggle = function ($section) {
   var $items = $section.querySelectorAll('.' + classToReplace)
   if ($items) {
     nodeListForEach($items, function ($item) {
-      $item.classList.replace(classToReplace, replacementClass)
+      $item.classList.remove(classToReplace)
+      $item.classList.add(replacementClass)
     })
   }
 }
