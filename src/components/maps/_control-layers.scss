@@ -81,10 +81,10 @@
 
   .smbc-control-layers__list-close-buttons {
     border-radius: 2px;
-    color: black;
+    color: govuk-colour("smbc-black");
     background:transparent;
     padding: 2px;
-    border: 1px solid #ccc;
+    border: 1px solid govuk-colour("dark-grey");;
     position: absolute;
     top: 0;
     right: 0;
@@ -97,7 +97,7 @@
     font-weight: bold;   
 
     &:hover {
-      background: #eeeeee;
+      background-color: govuk-colour("light-grey");;
     }
   }
 }
