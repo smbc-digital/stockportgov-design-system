@@ -16,6 +16,17 @@
   background-color: govuk-colour("smbc-green-light");
 }
 
+.smbc-panel--warning {
+  color: govuk-colour("smbc-black");
+  background-color: govuk-colour("orange");
+
+  @include govuk-media-query($media-type: print) {
+    border-color: currentColor;
+    color: $govuk-print-text-colour;
+    background: none;
+  }
+}
+
 .smbc-panel--error {
   @extend .govuk-panel--confirmation;
 
