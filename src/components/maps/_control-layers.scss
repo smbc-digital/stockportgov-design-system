@@ -78,4 +78,25 @@
     overflow-x: hidden;
     overflow-y: scroll;
   }
+
+  .smbc-control-layers__list-close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18px;
+    height: 14px;
+    padding: 2px;
+    border: 1px solid govuk-colour("dark-grey");
+    border-radius: 2px;
+    color: govuk-colour("smbc-black");
+    background: transparent;
+    font: 16px/14px  $govuk-font-family;
+    font-weight: $govuk-font-weight-bold;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+      background-color: govuk-colour("light-grey");
+    }
+  }
 }
