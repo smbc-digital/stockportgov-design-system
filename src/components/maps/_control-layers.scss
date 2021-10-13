@@ -5,6 +5,12 @@
   border-radius: 5px;
   background: govuk-colour("white");
   box-shadow: 0 1px 5px rgba(0, 0, 0, .4); // sass-lint:disable-line no-color-literals
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   .smbc-control-layers__group {
     .smbc-control-layers__group-header {
