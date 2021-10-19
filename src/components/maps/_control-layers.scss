@@ -66,6 +66,7 @@
 }
 
 .smbc-control-layers.leaflet-control.smbc-control-layers--expanded {
+  min-width: 142px;
   padding: 6px 10px 6px 6px;
   color: govuk-colour("smbc-black");
   background: govuk-colour("white");
@@ -89,20 +90,25 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 18px;
-    height: 14px;
+    width: 30px;
+    height: 30px;
     padding: 2px;
-    border: 1px solid govuk-colour("dark-grey");
-    border-radius: 2px;
-    color: govuk-colour("smbc-black");
-    background: transparent;
-    font: 16px/14px  $govuk-font-family;
+    border-radius: 5px;
+    color: govuk-colour("white");
+    background-color: $govuk-border-colour;
     font-weight: $govuk-font-weight-bold;
     text-align: center;
     text-decoration: none;
 
+    &::before {
+      content: "\f101";
+      font-family: "FontAwesome";
+      font-size: large;
+      vertical-align: middle;
+    }
+
     &:hover {
-      background-color: govuk-colour("light-grey");
+      background-color: govuk-colour("dark-grey");
     }
   }
 }
