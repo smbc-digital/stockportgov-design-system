@@ -5,17 +5,19 @@
   margin-bottom: 0;
   padding: 0;
   border: none; // sass-lint:disable-line border-zero
-  color: govuk-colour("blue");
+  color: $govuk-link-colour;
   background: none;
   box-shadow: none;
   text-decoration: underline;
   cursor: pointer;
+  text-decoration-thickness: unquote("max(1px, .0625rem)"); // sass-lint:disable-line no-misspelled-properties
+  text-underline-offset: .1em; // sass-lint:disable-line no-misspelled-properties
 
   &:hover {
-    color: govuk-colour("blue");
+    color: $govuk-link-hover-colour;
     background-color: transparent;
     text-decoration: underline;
-    text-decoration-thickness: 3px;
+    text-decoration-thickness: 3px; // sass-lint:disable-line no-misspelled-properties
   }
 
   &:focus:not(:active):not(:hover) {
