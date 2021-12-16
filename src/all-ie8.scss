@@ -2,5 +2,6 @@
 // targets IE8 – e.g. conditionally including or excluding styles, and
 // rasterizing media queries.
 $govuk-is-ie8: true;
+$govuk-new-link-styles: true;
 
 @import "all";
