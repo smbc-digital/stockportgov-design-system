@@ -1,3 +1,11 @@
+.smbc-notification-banner {
+  @extend .govuk-notification-banner;
+
+  max-width: 950px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .smbc-notification-banner__content {
   @extend .govuk-notification-banner__content;
 
