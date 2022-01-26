@@ -1,0 +1,8 @@
+.smbc-notification-banner__content {
+  @extend .govuk-notification-banner__content;
+
+  * {
+    max-width: 100%;
+    font-weight: $smbc-font-weight-light-bold;
+  }
+}

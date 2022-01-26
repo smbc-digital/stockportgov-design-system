@@ -4,6 +4,7 @@
 
 $govuk-font-family: "Public Sans", Helvetica, Arial, sans-serif;
 $govuk-font-weight-bold: 800;
+$smbc-font-weight-light-bold: 700;
 
 @import "./helpers/font-faces";
 @include _smbc-font-face-public-sans;
