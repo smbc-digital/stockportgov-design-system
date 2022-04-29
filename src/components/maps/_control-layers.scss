@@ -15,6 +15,7 @@
   .smbc-control-layers__group {
     .smbc-control-layers__group-header {
       font-weight: $govuk-font-weight-bold;
+      white-space: nowrap;
       cursor: pointer;
 
       i {
