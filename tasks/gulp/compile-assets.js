@@ -14,6 +14,7 @@ const rollup = require('gulp-better-rollup')
 const uglify = require('gulp-uglify')
 const eol = require('gulp-eol')
 const concat = require('gulp-concat')
+const gzip = require('gulp-gzip');
 
 const errorHandler = function (error) {
   console.error(error.message)
@@ -32,6 +33,7 @@ gulp.task('scss:compile', () => {
     .pipe(plumber(errorHandler))
     .pipe(sass())
     .pipe(postcss([autoprefixer, cssnano]))
+    .pipe(gzip({ append: false }))
     .pipe(
       rename({
         basename: 'smbc-frontend',
@@ -66,5 +68,6 @@ gulp.task('js:compile', () => {
 
   return merge(SMBCFrontend, GOVUKFrontend)
     .pipe(concat('smbc-frontend.min.js'))
+    .pipe(gzip({ append: false }))
     .pipe(gulp.dest(taskArguments.destination))
 })
