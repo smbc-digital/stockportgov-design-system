@@ -14,7 +14,7 @@ const rollup = require('gulp-better-rollup')
 const uglify = require('gulp-uglify')
 const eol = require('gulp-eol')
 const concat = require('gulp-concat')
-const gzip = require('gulp-gzip');
+const gzip = require('gulp-gzip')
 
 const errorHandler = function (error) {
   console.error(error.message)
