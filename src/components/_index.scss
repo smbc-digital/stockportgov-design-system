@@ -1,3 +1,5 @@
+@import "../../helpers/all";
+
 .smbc-time-input__item {
   @extend .govuk-date-input__item;
 
@@ -18,5 +20,5 @@
 .smbc-embeddable {
   padding: 0;
   overflow-y: auto;
-  background-color: #ffffff;
+  background-color: govuk-colour("white");
 }
