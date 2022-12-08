@@ -24,3 +24,9 @@
 .smbc-myaccount__input-section--bordered {
   border: 1px solid $govuk-border-colour;
 }
+
+.smbc-embeddable {
+  padding: 0;
+  overflow-y: auto;
+  background-color: govuk-colour("white");
+}
