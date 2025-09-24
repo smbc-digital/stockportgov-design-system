@@ -67,7 +67,6 @@ Calendar.prototype.syncConditionalRevealWithInputState = function ($input) {
   if ($target && $target.classList.contains('smbc-time__conditional')) {
     var inputIsChecked = $input.checked
 
-    $input.setAttribute('aria-expanded', inputIsChecked)
     $target.classList.toggle('smbc-time__conditional--hidden', !inputIsChecked)
   }
 }
