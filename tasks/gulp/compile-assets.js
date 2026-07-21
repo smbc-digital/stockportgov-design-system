@@ -2,7 +2,7 @@
 
 const gulp = require('gulp')
 const configPaths = require('../../config/paths.json')
-const sass = require('gulp-sass')
+const sass = require('gulp-sass')(require('sass'))
 const plumber = require('gulp-plumber')
 const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer')
@@ -27,6 +27,7 @@ const errorHandler = function (error) {
 // --------------------------------------
 gulp.task('scss:compile', () => {
   const compileStylesheet = configPaths.src + 'all.scss'
+  const destination = taskArguments.destination || 'dist'
 
   return gulp
     .src(compileStylesheet)
@@ -40,7 +41,27 @@ gulp.task('scss:compile', () => {
         extname: '.min.css'
       })
     )
-    .pipe(gulp.dest(taskArguments.destination + '/'))
+    .pipe(gulp.dest(destination + '/'))
+})
+
+// Compile sass without zip task --------------------
+// --------------------------------------
+gulp.task('scss:compilelocal', () => {
+  const compileStylesheet = configPaths.src + 'all.scss'
+  const destination = taskArguments.destination || 'dist'
+
+  return gulp
+    .src(compileStylesheet)
+    .pipe(plumber(errorHandler))
+    .pipe(sass())
+    .pipe(postcss([autoprefixer, cssnano]))
+    .pipe(
+      rename({
+        basename: 'smbc-frontend',
+        extname: '.min.css'
+      })
+    )
+    .pipe(gulp.dest(destination + '/'))
 })
 
 // Compile js task ----------------------
@@ -69,5 +90,33 @@ gulp.task('js:compile', () => {
   return merge(SMBCFrontend, GOVUKFrontend)
     .pipe(concat('smbc-frontend.min.js'))
     .pipe(gzip({ append: false }))
+    .pipe(gulp.dest(taskArguments.destination))
+})
+
+// Compile js without zip task ----------------------
+// --------------------------------------
+gulp.task('js:compilelocal', () => {
+  const srcFiles = configPaths.src + 'all.js'
+
+  const SMBCFrontend = gulp
+    .src([srcFiles, '!' + configPaths.src + '**/*.test.js'])
+    .pipe(
+      rollup({
+        // Used to set the `window` global and UMD/AMD export name.
+        name: 'SMBCFrontend',
+        // UMD allows the published bundle to work in CommonJS and in the browser.
+        format: 'umd'
+      })
+    )
+    .pipe(uglify())
+    .pipe(eol())
+
+  const GOVUKFrontend = gulp
+    .src(configPaths.GOVUKFrontend + 'all.js')
+    .pipe(uglify())
+    .pipe(eol())
+
+  return merge(SMBCFrontend, GOVUKFrontend)
+    .pipe(concat('smbc-frontend.min.js'))
     .pipe(gulp.dest(taskArguments.destination))
 })
