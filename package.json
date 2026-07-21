@@ -1,10 +1,11 @@
 {
   "name": "smbc-design-system",
-  "version": "1.6.1",
+  "version": "2.0.0",
   "description": "",
   "main": "gulpfile.js",
   "engines": {
-    "node": "12.13.1"
+    "node": ">=18 <19",
+    "npm": ">=9 <10"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1"
@@ -28,7 +29,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.0.0",
     "gulp-sass-lint": "^1.4.0",
     "gulp-task-listing": "^1.1.0",
     "gulp-uglify": "^3.0.2",
@@ -42,11 +43,13 @@
     "path": "^0.12.7",
     "puppeteer": "^1.14.0",
     "recursive-readdir": "^2.2.2",
+    "sass": "^1.77.0",
     "sassdoc": "^2.7.0",
     "standard": "^13.1.0"
   },
   "scripts": {
     "build:dist": "node bin/check-nvmrc.js && gulp build:dist --destination dist && npm run test:build:dist",
+    "build:dist:local": "node bin/check-nvmrc.js && gulp build:dist:local --destination dist && npm run test:build:dist",
     "test": "standard && gulp test && gulp copy-assets && jest --testPathIgnorePatterns='after-*'",
     "test:dependencies": "npm ls --depth=0",
     "test:build:dist": "jest tasks/gulp/tests/after-build-dist.test.js"
