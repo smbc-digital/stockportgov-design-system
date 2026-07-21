@@ -33,8 +33,8 @@ describe('SMBC Frontend', () => {
         @import "all";
       `
       const results = await renderSass({ data: sass })
-      expect(results.css.toString()).toMatch(/a,\s*\.govuk-link\s*\{/) 
-      expect(results.css.toString()).toMatch(/p,\s*\.govuk-body/) 
+      expect(results.css.toString()).toMatch(/a,\s*\.govuk-link\s*\{/)
+      expect(results.css.toString()).toMatch(/p,\s*\.govuk-body/)
     })
   })
 
