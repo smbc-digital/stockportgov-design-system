@@ -25,12 +25,27 @@ gulp.task('scripts', gulp.series(
   'js:compile'
 ))
 
+// Umbrella scripts tasks for preview ---
+// Runs js lint and compilation for local
+// --------------------------------------
+gulp.task('scripts:local', gulp.series(
+  'js:compilelocal'
+))
+
 // Umbrella styles tasks for preview ----
-// Runs js lint and compilation
+// Runs css lint and compilation
 // --------------------------------------
 gulp.task('styles', gulp.series(
   'scss:lint',
   'scss:compile'
+))
+
+// Umbrella styles tasks for preview ----
+// Runs css lint and compilation for local
+// --------------------------------------
+gulp.task('styles:local', gulp.series(
+  'scss:lint',
+  'scss:compilelocal'
 ))
 
 // Copy assets task ----------------------
@@ -71,6 +86,16 @@ gulp.task('build:dist', gulp.series(
   'clean',
   'styles',
   'scripts',
+  'copy:assets'
+))
+
+// Build dist for local task -----------------
+// Compile scss into css
+// -------------------------------------
+gulp.task('build:dist:local', gulp.series(
+  'clean',
+  'styles:local',
+  'scripts:local',
   'copy:assets'
 ))
 

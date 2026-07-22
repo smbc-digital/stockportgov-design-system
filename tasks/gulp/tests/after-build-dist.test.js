@@ -16,7 +16,7 @@ describe('dist/', () => {
           files => {
             return files
               // Remove /package prefix from filenames
-              .map(file => file.replace(/^src\\assets\\/, ''))
+              .map(file => file.replace(new RegExp('^src[/\\\\]assets[/\\\\]'), ''))
               // Sort to make comparison easier
               .sort()
           },
@@ -31,7 +31,7 @@ describe('dist/', () => {
           files => {
             return files
               // Remove /package prefix from filenames
-              .map(file => file.replace(/^dist\\assets\\/, ''))
+              .map(file => file.replace(new RegExp('^dist[/\\\\]assets[/\\\\]'), ''))
               // Sort to make comparison easier
               .sort()
           },
