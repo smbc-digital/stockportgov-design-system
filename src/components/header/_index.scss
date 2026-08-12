@@ -16,7 +16,7 @@
   }
 
   .smbc-header__link--service-name {
-    @extend .govuk-header__link--service-name;
+    @extend .govuk-header__service-name;
     font-size: 22px;
   }
 }
