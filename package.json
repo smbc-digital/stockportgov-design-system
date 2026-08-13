@@ -1,6 +1,6 @@
 {
   "name": "smbc-design-system",
-  "version": "2.0.0",
+  "version": "3.0.1",
   "description": "",
   "main": "gulpfile.js",
   "engines": {
@@ -20,7 +20,7 @@
     "cz-customizable": "^6.2.0",
     "del": "^5.1.0",
     "eslint": "^6.7.0",
-    "govuk-frontend": "^3.13.0",
+    "govuk-frontend": "^4.10.1",
     "gulp": "^4.0.2",
     "gulp-better-rollup": "3.1.0",
     "gulp-concat": "^2.6.1",
