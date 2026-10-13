@@ -1,5 +1,5 @@
-import 'govuk-frontend/govuk/vendor/polyfills/Event' // addEventListener and event.target normaliziation
-import 'govuk-frontend/govuk/vendor/polyfills/Function/prototype/bind'
+import 'govuk-frontend/dist/govuk/vendor/polyfills/Event' // addEventListener and event.target normaliziation
+import 'govuk-frontend/dist/govuk/vendor/polyfills/Function/prototype/bind'
 
 var INPUT_FILE_ERROR_CLASS = 'smbc-input--file-error'
 var INPUT_ERROR_CLASS = 'govuk-input--error'

@@ -1,5 +1,5 @@
-import 'govuk-frontend/govuk/vendor/polyfills/Event' // addEventListener and event.target normaliziation
-import 'govuk-frontend/govuk/vendor/polyfills/Function/prototype/bind'
+import 'govuk-frontend/dist/govuk/vendor/polyfills/Event' // addEventListener and event.target normaliziation
+import 'govuk-frontend/dist/govuk/vendor/polyfills/Function/prototype/bind'
 import { nodeListForEach } from '../../common'
 
 function Accordion ($module) {
