@@ -1,6 +1,6 @@
-import 'govuk-frontend/govuk/vendor/polyfills/Function/prototype/bind' // addEventListener, event.target normalization and DOMContentLoaded
-import 'govuk-frontend/govuk/vendor/polyfills/Event'
-import 'govuk-frontend/govuk/vendor/polyfills/Element/prototype/classList'
+import 'govuk-frontend/dist/govuk/vendor/polyfills/Function/prototype/bind' // addEventListener, event.target normalization and DOMContentLoaded
+import 'govuk-frontend/dist/govuk/vendor/polyfills/Event'
+import 'govuk-frontend/dist/govuk/vendor/polyfills/Element/prototype/classList'
 import { nodeListForEach } from '../../common'
 
 function Calendar ($module) {
