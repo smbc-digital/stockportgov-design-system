@@ -83,7 +83,7 @@ gulp.task('js:compile', () => {
     .pipe(eol())
 
   const GOVUKFrontend = gulp
-    .src(configPaths.GOVUKFrontend + 'all.js')
+    .src(configPaths.GOVUKFrontend + 'govuk-frontend.min.js')
     .pipe(uglify())
     .pipe(eol())
 
@@ -112,7 +112,7 @@ gulp.task('js:compilelocal', () => {
     .pipe(eol())
 
   const GOVUKFrontend = gulp
-    .src(configPaths.GOVUKFrontend + 'all.js')
+    .src(configPaths.GOVUKFrontend + 'govuk-frontend.min.js')
     .pipe(uglify())
     .pipe(eol())
 
